@@ -1,59 +1,65 @@
-import Link from "next/link";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Factory, Globe, Mail, Phone } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="w-full border-t bg-white pt-12 pb-8">
-      <div className="container mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="space-y-4 md:col-span-1">
-            <h3 className="font-heading text-xl font-bold text-primary">KonveksiPro</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              Pusat produksi garment terpercaya untuk kebutuhan bisnis, komunitas, dan institusi. Berkualitas, tepat waktu, dan bergaransi.
+    <footer className="bg-primary text-white pt-24 pb-12">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 pb-16 border-b border-white/5">
+          <div className="lg:col-span-5">
+            <div className="text-xl font-black font-heading mb-6 text-white flex items-center gap-2">
+              <div className="w-8 h-8 bg-secondary rounded-lg flex items-center justify-center">
+                <Factory className="text-white h-4 w-4" />
+              </div>
+              Konveksi<span className="text-secondary">Pro</span>
+            </div>
+            <p className="text-slate-400 font-medium text-base leading-relaxed mb-8 max-w-md">
+              Partner produksi garment terpercaya untuk kualitas skala industri dengan sentuhan presisi butik.
             </p>
+            <div className="flex gap-4">
+              <a className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-secondary hover:border-secondary transition-all group" href="#">
+                <Globe className="h-4 w-4 text-white/50 group-hover:text-white transition-colors" />
+              </a>
+              <a className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-secondary hover:border-secondary transition-all group" href="#">
+                <Mail className="h-4 w-4 text-white/50 group-hover:text-white transition-colors" />
+              </a>
+              <a className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-secondary hover:border-secondary transition-all group" href="#">
+                <Phone className="h-4 w-4 text-white/50 group-hover:text-white transition-colors" />
+              </a>
+            </div>
           </div>
-          
-          <div className="space-y-4">
-            <h4 className="font-heading font-semibold text-primary">Tautan Standar</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="/" className="hover:text-accent">Beranda</Link></li>
-              <li><Link href="#katalog" className="hover:text-accent">Katalog Produk</Link></li>
-              <li><Link href="#portfolio" className="hover:text-accent">Portfolio</Link></li>
-              <li><Link href="#lacak" className="hover:text-accent">Lacak Pesanan</Link></li>
-              <li><Link href="#" className="hover:text-accent">Syarat & Ketentuan</Link></li>
-            </ul>
-          </div>
-
-          <div className="space-y-4">
-            <h4 className="font-heading font-semibold text-primary">Jam Operasional</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>Senin - Jumat: 08.00 - 17.00</li>
-              <li>Sabtu: 08.00 - 14.00</li>
-              <li>Minggu: Tutup (Hanya melayani chat)</li>
-            </ul>
-          </div>
-
-          <div className="space-y-4">
-            <h4 className="font-heading font-semibold text-primary">Hubungi Kami</h4>
-            <ul className="space-y-3 text-sm text-muted-foreground">
-              <li className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 text-accent shrink-0" />
-                <span>Jl. Industri Garmen No. 128, Bandung, Jawa Barat 40111</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Phone className="h-5 w-5 text-accent shrink-0" />
-                <span>+62 812 3456 7890</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Mail className="h-5 w-5 text-accent shrink-0" />
-                <span>hello@konveksipro.com</span>
-              </li>
-            </ul>
+          <div className="lg:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-10">
+            <div className="space-y-8">
+              <h5 className="font-heading font-bold text-xs tracking-[0.2em] uppercase text-secondary">Company</h5>
+              <ul className="space-y-4">
+                <li><a className="text-slate-400 hover:text-white transition-all text-sm font-medium" href="#">About Us</a></li>
+                <li><a className="text-slate-400 hover:text-white transition-all text-sm font-medium" href="#">Careers</a></li>
+                <li><a className="text-slate-400 hover:text-white transition-all text-sm font-medium" href="#">Our Factory</a></li>
+              </ul>
+            </div>
+            <div className="space-y-8">
+              <h5 className="font-heading font-bold text-xs tracking-[0.2em] uppercase text-secondary">Legal</h5>
+              <ul className="space-y-4">
+                <li><a className="text-slate-400 hover:text-white transition-all text-sm font-medium" href="#">Terms of Service</a></li>
+                <li><a className="text-slate-400 hover:text-white transition-all text-sm font-medium" href="#">Privacy Policy</a></li>
+                <li><a className="text-slate-400 hover:text-white transition-all text-sm font-medium" href="#">Sustainability</a></li>
+              </ul>
+            </div>
+            <div className="space-y-8 col-span-2 md:col-span-1">
+              <h5 className="font-heading font-bold text-xs tracking-[0.2em] uppercase text-secondary">Newsletter</h5>
+              <p className="text-xs text-slate-500 font-medium">Get production updates and material insights.</p>
+              <div className="relative">
+                <input className="w-full bg-white/5 border-transparent rounded-xl py-3 px-4 text-sm focus:bg-white/10 focus:border-secondary focus:ring-0 outline-none transition-all" placeholder="Email" type="text" />
+              </div>
+            </div>
           </div>
         </div>
-        
-        <div className="mt-12 pt-8 border-t text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} KonveksiPro. Hak Cipta Dilindungi.</p>
+        <div className="pt-12 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-slate-500 text-[10px] font-bold tracking-[0.2em] uppercase">© 2026 KonveksiPro. Engineered for quality.</p>
+          <div className="flex gap-8">
+            <span className="text-slate-600 text-[10px] font-bold tracking-widest cursor-pointer hover:text-slate-400">INSTAGRAM</span>
+            <span className="text-slate-600 text-[10px] font-bold tracking-widest cursor-pointer hover:text-slate-400">LINKEDIN</span>
+            <span className="text-slate-600 text-[10px] font-bold tracking-widest cursor-pointer hover:text-slate-400">TWITTER</span>
+          </div>
         </div>
       </div>
     </footer>

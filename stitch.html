@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KonveksiPro | Modern Garment Manufacturing</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#051125",
+              "secondary": "#FF6B35", // Industrial Orange
+              "surface": "#F8FAFC",
+              "surface-variant": "#F1F5F9",
+              "outline-variant": "#E2E8F0",
+              "on-surface-variant": "#64748B",
+            },
+            fontFamily: {
+              "headline": ["Montserrat", "sans-serif"],
+              "body": ["Inter", "sans-serif"],
+            },
+            borderRadius: {
+              "DEFAULT": "0.75rem",
+              "lg": "1rem",
+              "xl": "1.5rem",
+              "2xl": "2rem",
+              "full": "9999px"
+            },
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .card-shadow {
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04);
+        }
+        .hover-lift {
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.08);
+        }
+        @keyframes subtle-pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        .pulse-soft {
+            animation: subtle-pulse 2s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-primary selection:bg-secondary/20 selection:text-secondary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 glass border-b border-white/20">
+<div class="flex justify-between items-center px-6 lg:px-12 py-5 max-w-7xl mx-auto">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-lg">precision_manufacturing</span>
+</div>
+<div class="text-xl font-extrabold text-primary tracking-tight font-headline">Konveksi<span class="text-secondary">Pro</span></div>
+</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="text-secondary font-headline font-bold text-sm tracking-wide" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary font-headline font-bold text-sm tracking-wide transition-colors" href="#">Katalog</a>
+<a class="text-on-surface-variant hover:text-primary font-headline font-bold text-sm tracking-wide transition-colors" href="#">Portfolio</a>
+<a class="text-on-surface-variant hover:text-primary font-headline font-bold text-sm tracking-wide transition-colors" href="#">Lacak Pesanan</a>
+</div>
+<button class="bg-secondary text-white px-6 py-3 rounded-full font-headline font-bold text-xs uppercase tracking-widest hover:brightness-110 active:scale-95 duration-200 transition-all shadow-lg shadow-secondary/20">
+            Konsultasi WA
+        </button>
+</div>
+</nav>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative min-h-[85vh] flex items-center overflow-hidden px-6 lg:px-12 py-24">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+<div class="lg:col-span-7 z-10">
+<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 text-secondary font-bold text-xs uppercase tracking-widest mb-8">
+<span class="flex h-2 w-2 rounded-full bg-secondary pulse-soft"></span>
+                    High Precision Manufacturing
+                </div>
+<h1 class="font-headline font-extrabold text-6xl lg:text-[5.5rem] leading-[1] tracking-tight mb-8 text-primary">
+                    Evolving <br/><span class="text-secondary">Garment</span> <br/>Standards.
+                </h1>
+<p class="text-on-surface-variant text-xl max-w-xl mb-12 leading-relaxed font-medium">
+                    Kualitas premium, tepat waktu, dan transparan. Kami mewujudkan standar manufaktur tinggi untuk kebutuhan brand dan korporasi global.
+                </p>
+<div class="flex flex-wrap gap-5">
+<button class="bg-primary text-white px-10 py-5 rounded-full font-headline font-bold transition-all flex items-center gap-3 group hover:pr-12 shadow-xl shadow-primary/20">
+                        Lihat Katalog
+                        <span class="material-symbols-outlined text-xl transition-transform group-hover:translate-x-1">arrow_forward</span>
+</button>
+<button class="bg-white border border-outline-variant hover:border-primary text-primary px-10 py-5 rounded-full font-headline font-bold transition-all">
+                        Lacak Pesanan
+                    </button>
+</div>
+</div>
+<div class="lg:col-span-5 relative">
+<div class="absolute -inset-10 bg-gradient-to-tr from-secondary/20 to-transparent rounded-full blur-3xl opacity-30"></div>
+<div class="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/5] lg:aspect-[3/4]">
+<img alt="Manufacturing floor" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC20qxYQHKEzw9ir-rF4GO-0bjp_OuIc-asoUyQRtJd-0pRCOJ9_PQu5-syT2tHgENDNr2UQy68X9ldxWygU4tfiOUm4_9NLSjLqvBIxqdtJapJMWAoW6FO-2-uSA0sEGFppU7hx4-a24jhoK9A91YcaKWLUkhZnFsvyKmRYw6GVmln6LMRmDd2QIqeq9nbDXQOd14lJcq4omBJKjAzLdAzJx1K5uz-BkzvRpNROPrKI9JXwdbmH8u-oerDYMQDSsd7nAQhbul4SHA"/>
+</div>
+<!-- High-End Stats Widget -->
+<div class="absolute -bottom-10 -left-10 glass p-8 rounded-2xl shadow-2xl border border-white/50 hidden md:block">
+<div class="flex items-center gap-5">
+<div class="bg-secondary text-white p-4 rounded-xl shadow-lg shadow-secondary/30">
+<span class="material-symbols-outlined text-3xl">verified</span>
+</div>
+<div>
+<div class="text-3xl font-black font-headline text-primary">99.8%</div>
+<div class="text-[10px] text-on-surface-variant uppercase tracking-[0.2em] font-bold">Accuracy rate</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Order Tracking (SaaS Dashboard Aesthetic) -->
+<section class="py-32 px-6 bg-white">
+<div class="max-w-5xl mx-auto">
+<div class="text-center mb-20">
+<h2 class="font-headline font-bold text-4xl text-primary mb-6 tracking-tight">Real-time Production</h2>
+<p class="text-on-surface-variant text-lg font-medium">Pantau setiap jahitan dalam proses produksi secara transparan.</p>
+</div>
+<div class="bg-surface-variant rounded-3xl p-2 md:p-4 card-shadow">
+<div class="bg-white rounded-[1.5rem] p-8 lg:p-12 shadow-sm">
+<div class="flex flex-col md:flex-row gap-4 mb-16 max-w-2xl mx-auto">
+<div class="relative flex-grow group">
+<span class="material-symbols-outlined absolute left-5 top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors">search</span>
+<input class="w-full pl-14 pr-6 py-5 rounded-2xl bg-surface border-transparent focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 transition-all text-primary font-semibold placeholder:text-slate-400" placeholder="Masukkan Nomor Invoice (INV-2024-001)" type="text"/>
+</div>
+<button class="bg-primary text-white px-10 py-5 rounded-2xl font-headline font-bold hover:bg-slate-800 transition-all whitespace-nowrap shadow-lg shadow-primary/10">
+                            Cari Pesanan
+                        </button>
+</div>
+<!-- Sleek Timeline Dashboard -->
+<div class="grid grid-cols-1 md:grid-cols-6 gap-0 relative">
+<div class="absolute top-1/2 left-0 w-full h-1 bg-surface-variant -translate-y-1/2 hidden md:block"></div>
+<!-- Step 1 -->
+<div class="relative z-10 flex flex-col items-center group mb-10 md:mb-0">
+<div class="w-12 h-12 rounded-full bg-emerald-500 text-white flex items-center justify-center mb-6 shadow-lg shadow-emerald-200 ring-8 ring-white">
+<span class="material-symbols-outlined text-xl">check</span>
+</div>
+<h4 class="font-headline font-bold text-sm text-primary mb-1">Pending</h4>
+<p class="text-[10px] font-bold text-emerald-500 uppercase tracking-widest">Completed</p>
+</div>
+<!-- Step 2 -->
+<div class="relative z-10 flex flex-col items-center group mb-10 md:mb-0">
+<div class="w-12 h-12 rounded-full bg-emerald-500 text-white flex items-center justify-center mb-6 shadow-lg shadow-emerald-200 ring-8 ring-white">
+<span class="material-symbols-outlined text-xl">check</span>
+</div>
+<h4 class="font-headline font-bold text-sm text-primary mb-1">Cutting</h4>
+<p class="text-[10px] font-bold text-emerald-500 uppercase tracking-widest">Completed</p>
+</div>
+<!-- Step 3 (Active) -->
+<div class="relative z-10 flex flex-col items-center group mb-10 md:mb-0">
+<div class="w-16 h-16 -mt-2 rounded-full bg-primary text-white flex items-center justify-center mb-4 shadow-2xl shadow-primary/30 ring-8 ring-white">
+<span class="material-symbols-outlined text-2xl pulse-soft">precision_manufacturing</span>
+</div>
+<h4 class="font-headline font-bold text-sm text-primary mb-1">Sewing</h4>
+<p class="text-[10px] font-bold text-secondary uppercase tracking-widest">In Progress</p>
+</div>
+<!-- Step 4 -->
+<div class="relative z-10 flex flex-col items-center group mb-10 md:mb-0 opacity-40">
+<div class="w-12 h-12 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center mb-6 ring-8 ring-white">
+<span class="material-symbols-outlined text-xl">format_paint</span>
+</div>
+<h4 class="font-headline font-bold text-sm text-primary mb-1">Printing</h4>
+<p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Waiting</p>
+</div>
+<!-- Step 5 -->
+<div class="relative z-10 flex flex-col items-center group mb-10 md:mb-0 opacity-40">
+<div class="w-12 h-12 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center mb-6 ring-8 ring-white">
+<span class="material-symbols-outlined text-xl">inventory_2</span>
+</div>
+<h4 class="font-headline font-bold text-sm text-primary mb-1">Quality</h4>
+<p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Waiting</p>
+</div>
+<!-- Step 6 -->
+<div class="relative z-10 flex flex-col items-center group opacity-40">
+<div class="w-12 h-12 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center mb-6 ring-8 ring-white">
+<span class="material-symbols-outlined text-xl">local_shipping</span>
+</div>
+<h4 class="font-headline font-bold text-sm text-primary mb-1">Shipment</h4>
+<p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Waiting</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Product Catalog Grid -->
+<section class="py-32 px-6 bg-surface">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+<div>
+<div class="text-secondary font-bold text-xs uppercase tracking-[0.3em] mb-4">Our Selection</div>
+<h2 class="font-headline font-bold text-5xl text-primary tracking-tight">Product Catalog</h2>
+</div>
+<button class="text-primary font-bold flex items-center gap-3 hover:gap-5 transition-all text-sm group">
+                    EXPLORE ALL COLLECTIONS <span class="material-symbols-outlined text-secondary transition-transform group-hover:translate-x-1">arrow_right_alt</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+<!-- Product Card 1 -->
+<div class="bg-white rounded-3xl overflow-hidden card-shadow hover-lift group">
+<div class="aspect-[4/5] overflow-hidden relative">
+<img alt="Kaos Sablon 30s" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrFVrPjz0783cbfXnTn1Jxmsud-ENuHcOHFK3mmmvDPknn6NiIqOWaYAurGV0TalmSiV6T3S-NaYoPcxoVHkV6bF6ivkA7oOZ9vaTAdIeo_yrj8Qi8IqYR0-7M8w6ALl31jgxHpolS_0rLohdMHrFLeW4g8dMDVpFrI36Am62ozAahm-PQDQ716Ut6q2s9MiXPsv37V7L7DsGP0hfoZmDrXuWjSgoUNzdynxLwM2-hatg07Ql5X4NAifuHn0lDwUkyyNGw6Oe_SYY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="absolute top-6 right-6">
+<span class="glass px-4 py-2 rounded-full text-[10px] font-bold tracking-widest uppercase text-primary">BEST SELLER</span>
+</div>
+</div>
+<div class="p-10">
+<div class="flex gap-3 mb-6">
+<span class="text-[10px] font-bold text-secondary uppercase border border-secondary/30 px-3 py-1.5 rounded-full">Cotton 30s</span>
+<span class="text-[10px] font-bold text-slate-400 uppercase border border-slate-100 px-3 py-1.5 rounded-full">Min. 24 Pcs</span>
+</div>
+<h3 class="font-headline font-bold text-2xl text-primary mb-3">Premium Essential Tee</h3>
+<p class="text-on-surface-variant text-sm mb-10 leading-relaxed font-medium">Material sejuk dengan daya serap tinggi. Sempurna untuk merch brand modern.</p>
+<button class="w-full bg-secondary text-white py-5 rounded-2xl font-headline font-bold flex items-center justify-center gap-3 hover:brightness-110 active:scale-95 transition-all shadow-lg shadow-secondary/20">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">chat</span>
+                            Pesan via WhatsApp
+                        </button>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-white rounded-3xl overflow-hidden card-shadow hover-lift group">
+<div class="aspect-[4/5] overflow-hidden relative">
+<img alt="Hoodie Jumper" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtHDiYGpMXwxOdf53_lwWhSrPJN8-snnNySro8fdo_VzMfxrz-OC6xDztCUzQU3HxKZCyAJ1RIPl7tzdxfPMivCXF-wjsyByOtFS80Fn6wK9Swh_N_ypXEnlehXDzWf4BtQRkuaHOSJyPV6b6GlWFwdJeKhtwR5r_d6fCCLo55o51qiJTZbFJ_FnCH3U3ihi8l1RVY57AQ9kg0cBVX7VB1X8zoVARidYQ1edQeGwZF000yw75UvprYXQGhSSbsh8msmBBsq66xRDY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-10">
+<div class="flex gap-3 mb-6">
+<span class="text-[10px] font-bold text-secondary uppercase border border-secondary/30 px-3 py-1.5 rounded-full">Heavy Fleece</span>
+<span class="text-[10px] font-bold text-slate-400 uppercase border border-slate-100 px-3 py-1.5 rounded-full">Min. 12 Pcs</span>
+</div>
+<h3 class="font-headline font-bold text-2xl text-primary mb-3">Heavyweight Hoodie</h3>
+<p class="text-on-surface-variant text-sm mb-10 leading-relaxed font-medium">Potongan oversized modern dengan bahan fleece tebal yang sangat lembut.</p>
+<button class="w-full bg-secondary text-white py-5 rounded-2xl font-headline font-bold flex items-center justify-center gap-3 hover:brightness-110 active:scale-95 transition-all shadow-lg shadow-secondary/20">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">chat</span>
+                            Pesan via WhatsApp
+                        </button>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="bg-white rounded-3xl overflow-hidden card-shadow hover-lift group">
+<div class="aspect-[4/5] overflow-hidden relative">
+<img alt="Kemeja PDL" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDPbRBHRhM8BDZ0lKqMvNCbS9fRWotBijaPBcYr25opxo_yKAmWcXpIWWc92-DG4xE4T7LkAPeYNiL8WYNiaHdX0UpXiy26czzUOyam9CINKzH0YTuI6dVaASEh3P72W0cwPa9U0BlPTmvjlReLTFvSRDCnp8nCTxdGmpuS5J02MEKcKsLJc5miN6PRnOAEPRX0EI3FZ2AHwrNrRcOvR4avheE8ysVAe14NMPKxlYVNw-vVJT3U64gyotYywG8Jatj-OHotRHMhVU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-10">
+<div class="flex gap-3 mb-6">
+<span class="text-[10px] font-bold text-secondary uppercase border border-secondary/30 px-3 py-1.5 rounded-full">American Drill</span>
+<span class="text-[10px] font-bold text-slate-400 uppercase border border-slate-100 px-3 py-1.5 rounded-full">Min. 24 Pcs</span>
+</div>
+<h3 class="font-headline font-bold text-2xl text-primary mb-3">Tactical Work Shirt</h3>
+<p class="text-on-surface-variant text-sm mb-10 leading-relaxed font-medium">Kekuatan jahitan ganda dengan material tahan gesek untuk medan berat.</p>
+<button class="w-full bg-secondary text-white py-5 rounded-2xl font-headline font-bold flex items-center justify-center gap-3 hover:brightness-110 active:scale-95 transition-all shadow-lg shadow-secondary/20">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">chat</span>
+                            Pesan via WhatsApp
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Social Proof / Portfolio -->
+<section class="py-32 px-6 bg-white overflow-hidden">
+<div class="max-w-7xl mx-auto">
+<div class="mb-20 text-center">
+<h2 class="font-headline font-bold text-5xl text-primary mb-6 tracking-tight">Industrial Impact</h2>
+<p class="text-on-surface-variant text-lg font-medium max-w-2xl mx-auto">Membangun ekosistem produksi yang berkelanjutan untuk mitra bisnis kami di seluruh Indonesia.</p>
+</div>
+<!-- Modern Stats Banner -->
+<div class="bg-primary rounded-[2.5rem] p-16 lg:p-24 mb-24 relative overflow-hidden shadow-2xl">
+<div class="absolute top-0 right-0 w-[500px] h-[500px] bg-secondary/10 rounded-full -mr-64 -mt-64 blur-[120px]"></div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-12 relative z-10">
+<div class="text-center lg:text-left">
+<div class="text-6xl font-headline font-extrabold text-white mb-3">10K<span class="text-secondary">+</span></div>
+<div class="text-slate-400 text-xs font-bold tracking-[0.2em] uppercase">Units Monthly</div>
+</div>
+<div class="text-center lg:text-left">
+<div class="text-6xl font-headline font-extrabold text-white mb-3">50<span class="text-secondary">+</span></div>
+<div class="text-slate-400 text-xs font-bold tracking-[0.2em] uppercase">Enterprise Clients</div>
+</div>
+<div class="text-center lg:text-left">
+<div class="text-6xl font-headline font-extrabold text-white mb-3">15<span class="text-secondary">+</span></div>
+<div class="text-slate-400 text-xs font-bold tracking-[0.2em] uppercase">Production Years</div>
+</div>
+<div class="text-center lg:text-left">
+<div class="text-6xl font-headline font-extrabold text-white mb-3">99<span class="text-secondary">%</span></div>
+<div class="text-slate-400 text-xs font-bold tracking-[0.2em] uppercase">Client Retention</div>
+</div>
+</div>
+</div>
+<!-- Masonry Portfolio -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6 auto-rows-[240px]">
+<div class="row-span-2 rounded-[2rem] overflow-hidden group">
+<img alt="Production" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9wjQirC0HVYunnZJ8dFg5-N__gCLa79t4nYNKEh3SPzE5TwX1nmfl7KVuKvgAcqmJBVE_2H-npHJTn8ZEQH8oMszFwrtEvBhBafqx_zCRr5e8sJ0FZGJj2MpNDk-UpXyPYBWOlyt4BOD7HlCjjr2hmhPoBZO4kH_z-9_KB4CQvideKfN7mSw4b2VRHK1rHtWIzGs1iuLDSgKs_LA3xL8VNr3b9kMpAjMIm8l5pGDRDUKOraiBks-K6BZzbp2WtPY32z3P3iMJrGk"/>
+</div>
+<div class="col-span-2 rounded-[2rem] overflow-hidden group">
+<img alt="Warehouse" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCz2lpKnrPxnPKjjM0-xIA4UpHlGpJ4Ou_GTEc30PLSHoqKttsta598ZwGBaW9J0yiJq9iCLSj4Hl58LSQGxIDMnFufRdHgbj5y7EYFRnVgx78PFnhQoDxSEMiQMknAxwgs-2qIkvx0RRlO-A5ujnQIWg6TMNuh292DNoiqMCU8r_D9tTAj_5CXdI9LC2r76NGsurv3pAc3jdcjhxPsqa5taQeWLRO6pLheWFSQjupydyOymB0VXcHy2clMOBs6XyA90CWFyG0aMks"/>
+</div>
+<div class="row-span-1 rounded-[2rem] overflow-hidden group">
+<img alt="Tailoring" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIre8V1S7nyIPXyQaeStDFKF-OatoDcmFOZJsK6u2dnKhpDEmO_SPCzDBMV-6YrS9qf2506d5VgekmJU2ONyIAi-Jbf50HneLghpaydSNeppc1y_Rww1WRm5nkgn3YSKQIA7VCcDVcDiH9XOp-0kV2mDPGGLCEtWgqqSAJEQhtOibhdiRQw5-dmnI0FUvOfAktAHtTGKvvug3cWsDLQCWztBCa6eyQ9YYT-JQfcUo-_DKXDFr9LwVAEFxvcTXsMq6olYMFUdSwo5M"/>
+</div>
+<div class="row-span-2 rounded-[2rem] overflow-hidden group">
+<img alt="Product" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWaFjsMh4n7oipNfeYFLwGkSEHCHJHBL3ACsPUVICqdQVrbQAwBrkhUdEnO1i0McizB21UkMOwB2559Gw_SbsqFWkdeYBJAJyIad1sGnUABr5Mgu6WQgh_goyfc99Cyo0R1wD8cz2y7gcEI9KhZmcfZgx9AiLlkDnH_0aBst5ZuiwQx_x5i4UgflTeIcEC-zsaV845seaXyl1LFWrGbtCs_9fwj0Z6SQ7jbri8eynUq2RhFMF4R617eL23W2cWGe-ekYnBYDkoD1c"/>
+</div>
+<div class="col-span-1 rounded-[2rem] overflow-hidden group">
+<img alt="Packaging" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBupPmPlFAx7I7GVKsAtSJOPouvylLSnaHZQ3fJpwNtyz_stc9Qeh764R55k6itJb6IDAiONYiSzah7nFW_XTOHamRQuq0xO-5BQvcgRhezyltpq8r7XJ9tcbexKTQcOEPuqAi1qfQ32CrpFgh83QMQMiuPMrKOx2W7Mjx4sxssPpexUiHtjjwYyBJY0z2YRN7bIho6PibVURtmiLsf-ymZwx81ev-fAB0cyIg_cvPA9aKT0WCEhHOfJGpxTU-02Sc8baKsPzbxQwk"/>
+</div>
+<div class="row-span-1 rounded-[2rem] overflow-hidden group">
+<img alt="Embroidery" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7jh26aB6nbtyxPhZIqUj_V9AH6_0oVjhPIRvJv5VvHBo9x2Wr0UmsG7tEVdfuq9LtDKwHOZzl0bNxn02KdaNExqVXQ8aOI-w0UfT5Z5BWQCeeKppfAOl37W-e-y022JlQHyQZ22jYmvKOKl6PgoXhoHvnUdnXPx7yYom9J7kJXw-OuIAyODx7pizRl54H4u9TE1z2fIWULRC7kWKPot32B73UPLP08SuxP11Q68GDpiATxTqFFyOwNHQQjS4r6MMDEhgFJt1uQng"/>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary text-white pt-32 pb-16">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-20 pb-20 border-b border-white/5">
+<div class="lg:col-span-5">
+<div class="text-2xl font-black font-headline mb-8 text-white flex items-center gap-2">
+<div class="w-10 h-10 bg-secondary rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-xl">precision_manufacturing</span>
+</div>
+                    Konveksi<span class="text-secondary">Pro</span>
+</div>
+<p class="text-slate-400 font-medium text-lg leading-relaxed mb-10 max-w-md">Partner produksi garment terpercaya untuk kualitas skala industri dengan sentuhan presisi butik.</p>
+<div class="flex gap-6">
+<a class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-secondary hover:border-secondary transition-all group" href="#">
+<span class="material-symbols-outlined text-white/50 group-hover:text-white transition-colors">public</span>
+</a>
+<a class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-secondary hover:border-secondary transition-all group" href="#">
+<span class="material-symbols-outlined text-white/50 group-hover:text-white transition-colors">mail</span>
+</a>
+<a class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-secondary hover:border-secondary transition-all group" href="#">
+<span class="material-symbols-outlined text-white/50 group-hover:text-white transition-colors">phone_in_talk</span>
+</a>
+</div>
+</div>
+<div class="lg:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-12">
+<div class="space-y-8">
+<h5 class="font-headline font-bold text-xs tracking-[0.2em] uppercase text-secondary">Company</h5>
+<ul class="space-y-4">
+<li><a class="text-slate-400 hover:text-white transition-all text-sm font-medium" href="#">About Us</a></li>
+<li><a class="text-slate-400 hover:text-white transition-all text-sm font-medium" href="#">Careers</a></li>
+<li><a class="text-slate-400 hover:text-white transition-all text-sm font-medium" href="#">Our Factory</a></li>
+</ul>
+</div>
+<div class="space-y-8">
+<h5 class="font-headline font-bold text-xs tracking-[0.2em] uppercase text-secondary">Legal</h5>
+<ul class="space-y-4">
+<li><a class="text-slate-400 hover:text-white transition-all text-sm font-medium" href="#">Terms of Service</a></li>
+<li><a class="text-slate-400 hover:text-white transition-all text-sm font-medium" href="#">Privacy Policy</a></li>
+<li><a class="text-slate-400 hover:text-white transition-all text-sm font-medium" href="#">Sustainability</a></li>
+</ul>
+</div>
+<div class="space-y-8 col-span-2 md:col-span-1">
+<h5 class="font-headline font-bold text-xs tracking-[0.2em] uppercase text-secondary">Newsletter</h5>
+<p class="text-xs text-slate-500 font-medium">Get production updates and material insights.</p>
+<div class="relative">
+<input class="w-full bg-white/5 border-transparent rounded-xl py-3 px-4 text-sm focus:bg-white/10 focus:border-secondary focus:ring-0 transition-all" placeholder="Email" type="text"/>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-12 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-slate-500 text-[10px] font-bold tracking-[0.2em] uppercase">© 2024 KonveksiPro. Engineered for quality.</p>
+<div class="flex gap-8">
+<span class="text-slate-600 text-[10px] font-bold tracking-widest cursor-pointer hover:text-slate-400">INSTAGRAM</span>
+<span class="text-slate-600 text-[10px] font-bold tracking-widest cursor-pointer hover:text-slate-400">LINKEDIN</span>
+<span class="text-slate-600 text-[10px] font-bold tracking-widest cursor-pointer hover:text-slate-400">TWITTER</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

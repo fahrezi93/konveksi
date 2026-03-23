@@ -1,121 +1,113 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircle2, Circle, Clock, Search } from "lucide-react";
-import { mockTrackingSteps } from "@/data/mockData";
+import { Search, Check, Factory, PaintBucket, Package, Truck, Info, AlertTriangle } from "lucide-react";
+
+const STEPS = [
+  { id: 1, label: "Pending", icon: Info, status: "Completed" },
+  { id: 2, label: "Cutting", icon: Check, status: "Completed" },
+  { id: 3, label: "Sewing", icon: Factory, status: "In Progress" },
+  { id: 4, label: "Printing", icon: PaintBucket, status: "Waiting" },
+  { id: 5, label: "Quality", icon: Package, status: "Waiting" },
+  { id: 6, label: "Shipment", icon: Truck, status: "Waiting" },
+];
 
 export default function OrderTracking() {
   const [invoice, setInvoice] = useState("");
-  const [isSearched, setIsSearched] = useState(false);
-  const [error, setError] = useState(false);
+  const [searchResult, setSearchResult] = useState<"idle" | "found" | "not-found">("idle");
 
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSearch = () => {
+    if (!invoice.trim()) {
+      setSearchResult("not-found");
+      return;
+    }
+    
     if (invoice.trim().toUpperCase() === "KNV-2026-001") {
-      setIsSearched(true);
-      setError(false);
+      setSearchResult("found");
     } else {
-      setError(true);
-      setIsSearched(false);
+      setSearchResult("not-found");
     }
   };
 
   return (
-    <section id="lacak" className="py-20 bg-muted/30">
-      <div className="container mx-auto px-4 md:px-8">
-        <div className="text-center space-y-4 mb-12">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary">Lacak Pesanan Anda</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Pantau status produksi garment Anda secara real-time. Masukkan nomor invoice yang telah diberikan oleh tim kami.
-          </p>
+    <section id="lacak" className="py-24 px-6 bg-white">
+      <div className="max-w-5xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="font-heading font-bold text-3xl text-primary mb-4 tracking-tight">Real-time Production</h2>
+          <p className="text-on-surface-variant text-base font-medium">Pantau setiap tahapan dalam proses produksi secara transparan.</p>
         </div>
-
-        <div className="max-w-2xl mx-auto">
-          <Card className="border-primary/10 shadow-lg">
-            <CardHeader className="bg-primary/5 border-b">
-              <CardTitle className="text-xl">Cek Status Produksi</CardTitle>
-              <CardDescription>
-                Masukkan Nomor Invoice (Contoh: KNV-2026-001)
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="pt-6">
-              <form onSubmit={handleSearch} className="flex gap-3 mb-8">
-                <Input 
-                  placeholder="KNV-2026-001" 
+        
+        <div className="bg-surface-variant rounded-3xl p-2 md:p-4 card-shadow">
+          <div className="bg-white rounded-[1.5rem] p-6 lg:p-10 shadow-sm">
+            
+            <div className="flex flex-col md:flex-row gap-4 mb-12 max-w-2xl mx-auto">
+              <div className="relative flex-grow group">
+                <Search className="absolute left-5 top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors h-5 w-5" />
+                <input 
                   value={invoice}
                   onChange={(e) => setInvoice(e.target.value)}
-                  className="flex-1 uppercase"
+                  onKeyDown={(e) => e.key === "Enter" && handleSearch()}
+                  type="text"
+                  className="w-full pl-12 pr-6 py-4 rounded-xl bg-surface border-transparent focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all outline-none text-primary font-semibold text-sm placeholder:text-slate-400" 
+                  placeholder="Masukkan Nomor Invoice (KNV-2026-001)" 
                 />
-                <Button type="submit" className="bg-primary hover:bg-primary/90">
-                  <Search className="h-4 w-4 mr-2" />
-                  Cek Status
-                </Button>
-              </form>
+              </div>
+              <button 
+                onClick={handleSearch}
+                className="bg-primary text-white px-8 py-4 rounded-xl font-heading font-bold text-sm hover:bg-slate-800 transition-all whitespace-nowrap shadow-lg shadow-primary/10"
+              >
+                Cari Pesanan
+              </button>
+            </div>
 
-              {error && (
-                <div className="text-destructive text-sm p-4 bg-destructive/10 rounded-md mb-6">
-                  Nomor invoice tidak ditemukan. Silakan periksa kembali atau coba gunakan KNV-2026-001 untuk demo.
-                </div>
-              )}
+            {searchResult === "not-found" && (
+              <div className="flex items-center justify-center gap-3 p-6 mb-8 text-amber-700 bg-amber-50 rounded-2xl border border-amber-200">
+                <AlertTriangle className="h-5 w-5" />
+                <p className="font-medium">Invoice tidak ditemukan. Silakan periksa kembali nomor invoice Anda (Coba: KNV-2026-001).</p>
+              </div>
+            )}
 
-              {isSearched && !error && (
-                <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
-                  <div className="flex items-center justify-between border-b pb-4">
-                    <div>
-                      <p className="text-sm font-medium text-muted-foreground">Invoice</p>
-                      <p className="font-heading font-bold text-lg">{invoice.toUpperCase()}</p>
+            {searchResult === "found" && (
+              <div className="grid grid-cols-1 md:grid-cols-6 gap-0 relative animate-in fade-in slide-in-from-bottom-8 duration-500">
+                <div className="absolute top-1/2 left-0 w-full h-1 bg-surface-variant -translate-y-1/2 hidden md:block"></div>
+                
+                {STEPS.map((step, index) => {
+                  const Icon = step.icon;
+                  const isCompleted = step.status === "Completed";
+                  const isInProgress = step.status === "In Progress";
+                  const isWaiting = step.status === "Waiting";
+                  
+                  return (
+                    <div key={index} className={`relative z-10 flex flex-col items-center group mb-10 md:mb-0 ${isWaiting ? 'opacity-40' : ''}`}>
+                      <div className={`
+                        flex items-center justify-center rounded-full mb-6 ring-8 ring-white
+                        ${isCompleted ? 'bg-emerald-500 text-white w-12 h-12 shadow-lg shadow-emerald-200' : ''}
+                        ${isInProgress ? 'bg-primary text-white w-16 h-16 -mt-2 shadow-2xl shadow-primary/30' : ''}
+                        ${isWaiting ? 'w-12 h-12 bg-surface-variant text-on-surface-variant' : ''}
+                      `}>
+                        <Icon className={`
+                          ${isCompleted ? 'h-6 w-6' : ''}
+                          ${isInProgress ? 'h-8 w-8 pulse-soft' : ''}
+                          ${isWaiting ? 'h-6 w-6' : ''}
+                        `} />
+                      </div>
+                      
+                      <h4 className="font-heading font-bold text-sm text-primary mb-1">{step.label}</h4>
+                      <p className={`
+                        text-[10px] font-bold uppercase tracking-widest
+                        ${isCompleted ? 'text-emerald-500' : ''}
+                        ${isInProgress ? 'text-secondary' : ''}
+                        ${isWaiting ? 'text-on-surface-variant' : ''}
+                      `}>
+                        {step.status}
+                      </p>
                     </div>
-                    <div className="text-right">
-                      <p className="text-sm font-medium text-muted-foreground">Estimasi Selesai</p>
-                      <p className="font-medium">10 Nov 2026</p>
-                    </div>
-                  </div>
-
-                  <div className="relative border-l-2 border-muted ml-3 space-y-6">
-                    {mockTrackingSteps.map((step, index) => {
-                      const isCompleted = step.status === "completed";
-                      const isActive = step.status === "active";
-                      const isPending = step.status === "pending";
-
-                      return (
-                        <div key={step.id} className="relative pl-8">
-                          {/* Step Icon */}
-                          <div className={`absolute -left-[11px] bg-background rounded-full p-1 
-                            ${isCompleted ? "text-accent" : isActive ? "text-primary" : "text-muted-foreground"}`}
-                          >
-                            {isCompleted ? (
-                              <CheckCircle2 className="w-5 h-5 fill-accent/20" />
-                            ) : isActive ? (
-                              <div className="w-5 h-5 rounded-full border-2 border-primary flex items-center justify-center">
-                                <div className="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></div>
-                              </div>
-                            ) : (
-                              <Circle className="w-5 h-5" />
-                            )}
-                          </div>
-
-                          {/* Step Content */}
-                          <div>
-                            <h4 className={`font-semibold ${isActive ? "text-primary text-lg" : "text-foreground"}`}>
-                              {step.title}
-                            </h4>
-                            <p className="text-sm text-muted-foreground flex items-center gap-1 mt-1">
-                              {isCompleted && "Selesai dikerjakan."}
-                              {isActive && "Sedang dalam proses."}
-                              {isPending && "Menunggu antrean."}
-                            </p>
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-              )}
-            </CardContent>
-          </Card>
+                  );
+                })}
+              </div>
+            )}
+            
+          </div>
         </div>
       </div>
     </section>

@@ -1,68 +1,86 @@
 "use client";
 
-import { buttonVariants } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Check } from "lucide-react";
-import { mockProducts } from "@/data/mockData";
+import { MessageCircle, ArrowRight } from "lucide-react";
+
+const CATALOG = [
+  {
+    id: 1,
+    title: "Premium Essential Tee",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDrFVrPjz0783cbfXnTn1Jxmsud-ENuHcOHFK3mmmvDPknn6NiIqOWaYAurGV0TalmSiV6T3S-NaYoPcxoVHkV6bF6ivkA7oOZ9vaTAdIeo_yrj8Qi8IqYR0-7M8w6ALl31jgxHpolS_0rLohdMHrFLeW4g8dMDVpFrI36Am62ozAahm-PQDQ716Ut6q2s9MiXPsv37V7L7DsGP0hfoZmDrXuWjSgoUNzdynxLwM2-hatg07Ql5X4NAifuHn0lDwUkyyNGw6Oe_SYY",
+    tags: ["Cotton 30s", "Min. 24 Pcs"],
+    desc: "Material sejuk dengan daya serap tinggi. Sempurna untuk merch brand modern.",
+    isBestSeller: true
+  },
+  {
+    id: 2,
+    title: "Heavyweight Hoodie",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDtHDiYGpMXwxOdf53_lwWhSrPJN8-snnNySro8fdo_VzMfxrz-OC6xDztCUzQU3HxKZCyAJ1RIPl7tzdxfPMivCXF-wjsyByOtFS80Fn6wK9Swh_N_ypXEnlehXDzWf4BtQRkuaHOSJyPV6b6GlWFwdJeKhtwR5r_d6fCCLo55o51qiJTZbFJ_FnCH3U3ihi8l1RVY57AQ9kg0cBVX7VB1X8zoVARidYQ1edQeGwZF000yw75UvprYXQGhSSbsh8msmBBsq66xRDY",
+    tags: ["Heavy Fleece", "Min. 12 Pcs"],
+    desc: "Potongan oversized modern dengan bahan fleece tebal yang sangat lembut.",
+    isBestSeller: false
+  },
+  {
+    id: 3,
+    title: "Tactical Work Shirt",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCDPbRBHRhM8BDZ0lKqMvNCbS9fRWotBijaPBcYr25opxo_yKAmWcXpIWWc92-DG4xE4T7LkAPeYNiL8WYNiaHdX0UpXiy26czzUOyam9CINKzH0YTuI6dVaASEh3P72W0cwPa9U0BlPTmvjlReLTFvSRDCnp8nCTxdGmpuS5J02MEKcKsLJc5miN6PRnOAEPRX0EI3FZ2AHwrNrRcOvR4avheE8ysVAe14NMPKxlYVNw-vVJT3U64gyotYywG8Jatj-OHotRHMhVU",
+    tags: ["American Drill", "Min. 24 Pcs"],
+    desc: "Kekuatan jahitan ganda dengan material tahan gesek untuk medan berat.",
+    isBestSeller: false
+  }
+];
 
 export default function ProductCatalog() {
   return (
-    <section id="katalog" className="py-20 bg-background">
-      <div className="container mx-auto px-4 md:px-8">
-        <div className="text-center space-y-4 mb-16">
-          <Badge variant="outline" className="border-accent text-accent bg-accent/5">Fokus Layanan</Badge>
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary">Katalog Produk Unggulan</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Pilih jenis pakaian sesuai kebutuhan institusi atau acara Anda. Dibuat dengan presisi tinggi dan bahan kelas satu.
-          </p>
+    <section id="katalog" className="py-24 px-6 bg-surface">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+          <div>
+            <div className="text-secondary font-bold text-xs uppercase tracking-[0.3em] mb-3">Our Selection</div>
+            <h2 className="font-heading font-bold text-4xl text-primary tracking-tight">Product Catalog</h2>
+          </div>
+          <button className="text-primary font-bold flex items-center gap-2 hover:gap-4 transition-all text-xs group">
+            EXPLORE ALL COLLECTIONS <ArrowRight className="h-4 w-4 text-secondary transition-transform group-hover:translate-x-1" />
+          </button>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {mockProducts.map((product) => (
-            <Card key={product.id} className="overflow-hidden group hover:shadow-xl transition-all duration-300 border-primary/5">
-              <div className="aspect-[4/3] w-full overflow-hidden relative bg-muted">
-                {/* Image Placeholder via unsplash */}
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          {CATALOG.map((item) => (
+            <div key={item.id} className="bg-white rounded-3xl overflow-hidden card-shadow hover-lift group">
+              <div className="aspect-[4/5] overflow-hidden relative">
                 <img 
-                  src={product.image} 
-                  alt={product.name} 
-                  className="object-cover w-full h-full transform transition duration-500 group-hover:scale-105"
+                  alt={item.title} 
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
+                  src={item.image}
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                
+                {item.isBestSeller && (
+                  <div className="absolute top-6 right-6">
+                    <span className="glass px-4 py-2 rounded-full text-[10px] font-bold tracking-widest uppercase text-primary">BEST SELLER</span>
+                  </div>
+                )}
               </div>
-              <CardContent className="p-6">
-                <h3 className="font-heading text-xl font-bold mb-4 group-hover:text-accent transition-colors">{product.name}</h3>
-                <ul className="space-y-2 mb-6 text-sm text-muted-foreground">
-                  {product.specs.map((spec, index) => (
-                    <li key={index} className="flex items-center gap-2">
-                      <Check className="h-4 w-4 text-accent" />
-                      {spec}
-                    </li>
-                  ))}
-                  <li className="flex items-center gap-2">
-                    <Check className="h-4 w-4 text-accent" />
-                    Bisa Custom Desain
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="h-4 w-4 text-accent" />
-                    Min. Order 24 Pcs
-                  </li>
-                </ul>
-              </CardContent>
-              <CardFooter className="p-6 pt-0">
+              
+              <div className="p-6 md:p-8">
+                <div className="flex gap-2 mb-4">
+                  <span className="text-[9px] font-bold text-secondary uppercase border border-secondary/30 px-3 py-1.5 rounded-full">{item.tags[0]}</span>
+                  <span className="text-[9px] font-bold text-slate-400 uppercase border border-slate-100 px-3 py-1.5 rounded-full">{item.tags[1]}</span>
+                </div>
+                
+                <h3 className="font-heading font-bold text-xl text-primary mb-2">{item.title}</h3>
+                <p className="text-on-surface-variant text-sm mb-8 leading-relaxed font-medium">{item.desc}</p>
+                
                 <a 
-                  href={`https://wa.me/6281234567890?text=Halo Kak, saya tertarik untuk pesan *${product.name}*. Boleh minta detail harganya?`} 
+                  href={`https://wa.me/6281234567890?text=Halo Kak, saya tertarik untuk pesan *${item.title}*. Boleh minta detail harganya?`} 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className={cn(buttonVariants(), "w-full bg-[#25D366] hover:bg-[#1DA851] text-white gap-2")}
+                  className="w-full bg-secondary text-white py-4 rounded-xl font-heading font-bold text-sm flex items-center justify-center gap-2 hover:brightness-110 active:scale-95 transition-all shadow-lg shadow-secondary/20"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
-                  </svg>
+                  <MessageCircle className="h-4 w-4" />
                   Pesan via WhatsApp
                 </a>
-              </CardFooter>
-            </Card>
+              </div>
+            </div>
           ))}
         </div>
       </div>

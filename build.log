@@ -1,0 +1,352 @@
+
+> konveksi@0.1.0 build
+> next build
+
+▲ Next.js 16.2.1 (Turbopack)
+
+  Creating an optimized production build ...
+Error: Can't resolve 'tailwindcss-animate' in 'D:\konveksi\src\app'
+    [2m[at finishWithoutResolve (D:\konveksi\node_modules\enhanced-resolve\lib\Resolver.js:587:18)][0m
+    [2m[at D:\konveksi\node_modules\enhanced-resolve\lib\Resolver.js:679:14][0m
+    [2m[at D:\konveksi\node_modules\enhanced-resolve\lib\Resolver.js:740:5][0m
+    [2m[at eval (eval at create (D:\konveksi\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:15:1)][0m
+    [2m[at D:\konveksi\node_modules\enhanced-resolve\lib\Resolver.js:740:5][0m
+    [2m[at eval (eval at create (D:\konveksi\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:27:1)][0m
+    [2m[at D:\konveksi\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:89:43][0m
+    [2m[at D:\konveksi\node_modules\enhanced-resolve\lib\Resolver.js:740:5][0m
+    [2m[at eval (eval at create (D:\konveksi\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:15:1)][0m
+    [2m[at D:\konveksi\node_modules\enhanced-resolve\lib\Resolver.js:740:5][0m {
+  details: "resolve 'tailwindcss-animate' in 'D:\\konveksi\\src\\app'\n" +
+    '  Parsed request is a module\n' +
+    '  using description file: D:\\konveksi\\package.json (relative path: ./src/app)\n' +
+    '    resolve as module\n' +
+    "      D:\\konveksi\\src\\app\\node_modules doesn't exist or is not a directory\n" +
+    "      D:\\konveksi\\src\\node_modules doesn't exist or is not a directory\n" +
+    '      looking for modules in D:\\konveksi\\node_modules\n' +
+    '        single file module\n' +
+    '          using description file: D:\\konveksi\\package.json (relative path: ./node_modules/tailwindcss-animate)\n' +
+    '            no extension\n' +
+    "              D:\\konveksi\\node_modules\\tailwindcss-animate doesn't exist\n" +
+    '            .js\n' +
+    "              D:\\konveksi\\node_modules\\tailwindcss-animate.js doesn't exist\n" +
+    '            .json\n' +
+    "              D:\\konveksi\\node_modules\\tailwindcss-animate.json doesn't exist\n" +
+    '            .node\n' +
+    "              D:\\konveksi\\node_modules\\tailwindcss-animate.node doesn't exist\n" +
+    '            .ts\n' +
+    "              D:\\konveksi\\node_modules\\tailwindcss-animate.ts doesn't exist\n" +
+    "        D:\\konveksi\\node_modules\\tailwindcss-animate doesn't exist\n" +
+    "      D:\\node_modules doesn't exist or is not a directory"
+}
+Turbopack build encountered 10 warnings:
+[next]/internal/font/google/1bffadaabf893a1e-s.woff2
+Error while requesting resource
+There was an issue establishing a connection while requesting https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7W0Q5n-wU.woff2
+
+
+[next]/internal/font/google/2bbe8d2671613f1f-s.woff2
+Error while requesting resource
+There was an issue establishing a connection while requesting https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7W0Q5n-wU.woff2
+
+
+[next]/internal/font/google/2c55a0e60120577a-s.woff2
+Error while requesting resource
+There was an issue establishing a connection while requesting https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7W0Q5n-wU.woff2
+
+
+[next]/internal/font/google/44fac91e6f2d2b1b-s.woff2
+Error while requesting resource
+There was an issue establishing a connection while requesting https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459W1hyyTh89ZNpQ.woff2
+
+
+[next]/internal/font/google/8298327da6d5bcce-s.woff2
+Error while requesting resource
+There was an issue establishing a connection while requesting https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459WRhyyTh89ZNpQ.woff2
+
+
+[next]/internal/font/google/83afe278b6a6bb3c-s.p.woff2
+Error while requesting resource
+There was an issue establishing a connection while requesting https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2
+
+
+[next]/internal/font/google/9c72aa0f40e4eef8-s.woff2
+Error while requesting resource
+There was an issue establishing a connection while requesting https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7W0Q5n-wU.woff2
+
+
+[next]/internal/font/google/a88409fdd7dc121c-s.woff2
+Error while requesting resource
+There was an issue establishing a connection while requesting https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459WdhyyTh89ZNpQ.woff2
+
+
+[next]/internal/font/google/ad66f9afd8947f86-s.woff2
+Error while requesting resource
+There was an issue establishing a connection while requesting https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7W0Q5n-wU.woff2
+
+
+[next]/internal/font/google/e8f2fbee2754df70-s.p.woff2
+Error while requesting resource
+There was an issue establishing a connection while requesting https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2
+
+
+
+> Build error occurred
+Error: Turbopack build failed with 11 errors:
+./src/app/globals.css
+Error evaluating Node.js code
+CssSyntaxError: tailwindcss: D:\konveksi\src\app\globals.css:1:1: Can't resolve 'tailwindcss-animate' in 'D:\konveksi\src\app'
+    at Input.error (node_modules/postcss/lib/input.js:135:16) [D:\konveksi\.next\build\chunks\node_modules_13sb.px._.js:4651:22]
+    at error (node_modules/postcss/lib/node.js:146:32) [D:\konveksi\.next\build\chunks\node_modules_13sb.px._.js:928:38]
+    [at Object.Once (D:\konveksi\node_modules\@tailwindcss\postcss\dist\index.js:10:6913)]
+    at async LazyResult.runAsync (node_modules/postcss/lib/lazy-result.js:293:11) [D:\konveksi\.next\build\chunks\node_modules_13sb.px._.js:6214:21]
+    at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34) [D:\konveksi\.next\build\chunks\[root-of-the-server]__0d-m0h0._.js:146:36]
+    at async run (turbopack:///[turbopack-node]/child_process/evaluate.ts:89:23) [D:\konveksi\.next\build\chunks\[root-of-the-server]__0ubbtyl._.js:443:31]
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+
+[next]/internal/font/google/inter_786c1081.module.css:7:8
+Module not found: Can't resolve '@vercel/turbopack-next/internal/font/google/font'
+  [90m 5 |[0m   font-weight: [35m100[0m [35m900[0m;
+  [90m 6 |[0m   font-display: swap;
+[31m[1m>[0m [90m 7 |[0m   src: url(@vercel/turbopack-next/internal/font/google/font?{%[35m22[0murl%[35m22[0m:%[35m22[0mhttps:[90m//fonts.gs...[0m
+  [90m   |[0m        [31m[1m^[0m
+  [90m 8 |[0m   unicode-range: [33mU[0m+[35m0460[0m-[35m052[0m[33mF[0m, [33mU[0m+[35m1[0m[33mC80[0m-[35m1[0m[33mC8A[0m, [33mU[0m+[35m20[0m[33mB4[0m, [33mU[0m+[35m2[0m[33mDE0[0m-[35m2[0m[33mDFF[0m, [33mU[0m+[33mA640[0m-[33mA69F[0m, [33mU[0m+[33mFE2E[0m-[33mFE2F[0m;
+  [90m 9 |[0m }
+  [90m10 |[0m [90m/* cyrillic */[0m
+
+Import map: Resolved by import map
+
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/inter_786c1081.module.css
+    [next]/internal/font/google/inter_786c1081.js
+    ./src/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[next]/internal/font/google/inter_786c1081.module.css:16:8
+Module not found: Can't resolve '@vercel/turbopack-next/internal/font/google/font'
+  [90m14 |[0m   font-weight: [35m100[0m [35m900[0m;
+  [90m15 |[0m   font-display: swap;
+[31m[1m>[0m [90m16 |[0m   src: url(@vercel/turbopack-next/internal/font/google/font?{%[35m22[0murl%[35m22[0m:%[35m22[0mhttps:[90m//fonts.gs...[0m
+  [90m   |[0m        [31m[1m^[0m
+  [90m17 |[0m   unicode-range: [33mU[0m+[35m0301[0m, [33mU[0m+[35m0400[0m-[35m045[0m[33mF[0m, [33mU[0m+[35m0490[0m-[35m0491[0m, [33mU[0m+[35m04[0m[33mB0[0m-[35m04[0m[33mB1[0m, [33mU[0m+[35m2116[0m;
+  [90m18 |[0m }
+  [90m19 |[0m [90m/* greek-ext */[0m
+
+Import map: Resolved by import map
+
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/inter_786c1081.module.css
+    [next]/internal/font/google/inter_786c1081.js
+    ./src/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[next]/internal/font/google/inter_786c1081.module.css:25:8
+Module not found: Can't resolve '@vercel/turbopack-next/internal/font/google/font'
+  [90m23 |[0m   font-weight: [35m100[0m [35m900[0m;
+  [90m24 |[0m   font-display: swap;
+[31m[1m>[0m [90m25 |[0m   src: url(@vercel/turbopack-next/internal/font/google/font?{%[35m22[0murl%[35m22[0m:%[35m22[0mhttps:[90m//fonts.gs...[0m
+  [90m   |[0m        [31m[1m^[0m
+  [90m26 |[0m   unicode-range: [33mU[0m+[35m1[0m[33mF00[0m-[35m1[0m[33mFFF[0m;
+  [90m27 |[0m }
+  [90m28 |[0m [90m/* greek */[0m
+
+Import map: Resolved by import map
+
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/inter_786c1081.module.css
+    [next]/internal/font/google/inter_786c1081.js
+    ./src/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[next]/internal/font/google/inter_786c1081.module.css:43:8
+Module not found: Can't resolve '@vercel/turbopack-next/internal/font/google/font'
+  [90m41 |[0m   font-weight: [35m100[0m [35m900[0m;
+  [90m42 |[0m   font-display: swap;
+[31m[1m>[0m [90m43 |[0m   src: url(@vercel/turbopack-next/internal/font/google/font?{%[35m22[0murl%[35m22[0m:%[35m22[0mhttps:[90m//fonts.gs...[0m
+  [90m   |[0m        [31m[1m^[0m
+  [90m44 |[0m   unicode-range: [33mU[0m+[35m0102[0m-[35m0103[0m, [33mU[0m+[35m0110[0m-[35m0111[0m, [33mU[0m+[35m0128[0m-[35m0129[0m, [33mU[0m+[35m0168[0m-[35m0169[0m, [33mU[0m+[35m01[0m[33mA0[0m-[35m01[0m[33mA1[0m, [33mU[0m+[35m01[0m[33mAF[0m-[35m0.[0m[33m..[0m
+  [90m45 |[0m }
+  [90m46 |[0m [90m/* latin-ext */[0m
+
+Import map: Resolved by import map
+
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/inter_786c1081.module.css
+    [next]/internal/font/google/inter_786c1081.js
+    ./src/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[next]/internal/font/google/inter_786c1081.module.css:52:8
+Module not found: Can't resolve '@vercel/turbopack-next/internal/font/google/font'
+  [90m50 |[0m   font-weight: [35m100[0m [35m900[0m;
+  [90m51 |[0m   font-display: swap;
+[31m[1m>[0m [90m52 |[0m   src: url(@vercel/turbopack-next/internal/font/google/font?{%[35m22[0murl%[35m22[0m:%[35m22[0mhttps:[90m//fonts.gs...[0m
+  [90m   |[0m        [31m[1m^[0m
+  [90m53 |[0m   unicode-range: [33mU[0m+[35m0100[0m-[35m02[0m[33mBA[0m, [33mU[0m+[35m02[0m[33mBD[0m-[35m02[0m[33mC5[0m, [33mU[0m+[35m02[0m[33mC7[0m-[35m02[0m[33mCC[0m, [33mU[0m+[35m02[0m[33mCE[0m-[35m02[0m[33mD7[0m, [33mU[0m+[35m02[0m[33mDD[0m-[35m02[0m[33mFF[0m, [33mU[0m+[35m0304[0m, [33m.[0m.[35m.[0m
+  [90m54 |[0m }
+  [90m55 |[0m [90m/* latin */[0m
+
+Import map: Resolved by import map
+
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/inter_786c1081.module.css
+    [next]/internal/font/google/inter_786c1081.js
+    ./src/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[next]/internal/font/google/inter_786c1081.module.css:61:8
+Module not found: Can't resolve '@vercel/turbopack-next/internal/font/google/font'
+  [90m59 |[0m   font-weight: [35m100[0m [35m900[0m;
+  [90m60 |[0m   font-display: swap;
+[31m[1m>[0m [90m61 |[0m   src: url(@vercel/turbopack-next/internal/font/google/font?{%[35m22[0murl%[35m22[0m:%[35m22[0mhttps:[90m//fonts.gs...[0m
+  [90m   |[0m        [31m[1m^[0m
+  [90m62 |[0m   unicode-range: [33mU[0m+[35m0000[0m-[35m00[0m[33mFF[0m, [33mU[0m+[35m0131[0m, [33mU[0m+[35m0152[0m-[35m0153[0m, [33mU[0m+[35m02[0m[33mBB[0m-[35m02[0m[33mBC[0m, [33mU[0m+[35m02[0m[33mC6[0m, [33mU[0m+[35m02[0m[33mDA[0m, [33mU[0m+[35m02[0m[33mDC[0m, [33mU[0m+[35m...[0m
+  [90m63 |[0m }
+  [90m64 |[0m @font-face {
+
+Import map: Resolved by import map
+
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/inter_786c1081.module.css
+    [next]/internal/font/google/inter_786c1081.js
+    ./src/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[next]/internal/font/google/montserrat_4e203333.module.css:7:8
+Module not found: Can't resolve '@vercel/turbopack-next/internal/font/google/font'
+  [90m 5 |[0m   font-weight: [35m100[0m [35m900[0m;
+  [90m 6 |[0m   font-display: swap;
+[31m[1m>[0m [90m 7 |[0m   src: url(@vercel/turbopack-next/internal/font/google/font?{%[35m22[0murl%[35m22[0m:%[35m22[0mhttps:[90m//fonts.gs...[0m
+  [90m   |[0m        [31m[1m^[0m
+  [90m 8 |[0m   unicode-range: [33mU[0m+[35m0460[0m-[35m052[0m[33mF[0m, [33mU[0m+[35m1[0m[33mC80[0m-[35m1[0m[33mC8A[0m, [33mU[0m+[35m20[0m[33mB4[0m, [33mU[0m+[35m2[0m[33mDE0[0m-[35m2[0m[33mDFF[0m, [33mU[0m+[33mA640[0m-[33mA69F[0m, [33mU[0m+[33mFE2E[0m-[33mFE2F[0m;
+  [90m 9 |[0m }
+  [90m10 |[0m [90m/* cyrillic */[0m
+
+Import map: Resolved by import map
+
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/montserrat_4e203333.module.css
+    [next]/internal/font/google/montserrat_4e203333.js
+    ./src/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[next]/internal/font/google/montserrat_4e203333.module.css:16:8
+Module not found: Can't resolve '@vercel/turbopack-next/internal/font/google/font'
+  [90m14 |[0m   font-weight: [35m100[0m [35m900[0m;
+  [90m15 |[0m   font-display: swap;
+[31m[1m>[0m [90m16 |[0m   src: url(@vercel/turbopack-next/internal/font/google/font?{%[35m22[0murl%[35m22[0m:%[35m22[0mhttps:[90m//fonts.gs...[0m
+  [90m   |[0m        [31m[1m^[0m
+  [90m17 |[0m   unicode-range: [33mU[0m+[35m0301[0m, [33mU[0m+[35m0400[0m-[35m045[0m[33mF[0m, [33mU[0m+[35m0490[0m-[35m0491[0m, [33mU[0m+[35m04[0m[33mB0[0m-[35m04[0m[33mB1[0m, [33mU[0m+[35m2116[0m;
+  [90m18 |[0m }
+  [90m19 |[0m [90m/* vietnamese */[0m
+
+Import map: Resolved by import map
+
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/montserrat_4e203333.module.css
+    [next]/internal/font/google/montserrat_4e203333.js
+    ./src/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[next]/internal/font/google/montserrat_4e203333.module.css:34:8
+Module not found: Can't resolve '@vercel/turbopack-next/internal/font/google/font'
+  [90m32 |[0m   font-weight: [35m100[0m [35m900[0m;
+  [90m33 |[0m   font-display: swap;
+[31m[1m>[0m [90m34 |[0m   src: url(@vercel/turbopack-next/internal/font/google/font?{%[35m22[0murl%[35m22[0m:%[35m22[0mhttps:[90m//fonts.gs...[0m
+  [90m   |[0m        [31m[1m^[0m
+  [90m35 |[0m   unicode-range: [33mU[0m+[35m0100[0m-[35m02[0m[33mBA[0m, [33mU[0m+[35m02[0m[33mBD[0m-[35m02[0m[33mC5[0m, [33mU[0m+[35m02[0m[33mC7[0m-[35m02[0m[33mCC[0m, [33mU[0m+[35m02[0m[33mCE[0m-[35m02[0m[33mD7[0m, [33mU[0m+[35m02[0m[33mDD[0m-[35m02[0m[33mFF[0m, [33mU[0m+[35m0304[0m, [33m.[0m.[35m.[0m
+  [90m36 |[0m }
+  [90m37 |[0m [90m/* latin */[0m
+
+Import map: Resolved by import map
+
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/montserrat_4e203333.module.css
+    [next]/internal/font/google/montserrat_4e203333.js
+    ./src/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[next]/internal/font/google/montserrat_4e203333.module.css:43:8
+Module not found: Can't resolve '@vercel/turbopack-next/internal/font/google/font'
+  [90m41 |[0m   font-weight: [35m100[0m [35m900[0m;
+  [90m42 |[0m   font-display: swap;
+[31m[1m>[0m [90m43 |[0m   src: url(@vercel/turbopack-next/internal/font/google/font?{%[35m22[0murl%[35m22[0m:%[35m22[0mhttps:[90m//fonts.gs...[0m
+  [90m   |[0m        [31m[1m^[0m
+  [90m44 |[0m   unicode-range: [33mU[0m+[35m0000[0m-[35m00[0m[33mFF[0m, [33mU[0m+[35m0131[0m, [33mU[0m+[35m0152[0m-[35m0153[0m, [33mU[0m+[35m02[0m[33mBB[0m-[35m02[0m[33mBC[0m, [33mU[0m+[35m02[0m[33mC6[0m, [33mU[0m+[35m02[0m[33mDA[0m, [33mU[0m+[35m02[0m[33mDC[0m, [33mU[0m+[35m...[0m
+  [90m45 |[0m }
+  [90m46 |[0m @font-face {
+
+Import map: Resolved by import map
+
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/montserrat_4e203333.module.css
+    [next]/internal/font/google/montserrat_4e203333.js
+    ./src/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34) [D:\konveksi\.next\build\chunks\[root-of-the-server]__0d-m0h0._.js:146:36])
+    at async run (turbopack:///[turbopack-node]/child_process/evaluate.ts:89:23) [D:\konveksi\.next\build\chunks\[root-of-the-server]__0ubbtyl._.js:443:31])
+    at <unknown> ([next]/internal/font/google/inter_786c1081.module.css:7:8)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> ([next]/internal/font/google/inter_786c1081.module.css:16:8)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> ([next]/internal/font/google/inter_786c1081.module.css:25:8)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> ([next]/internal/font/google/inter_786c1081.module.css:43:8)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> ([next]/internal/font/google/inter_786c1081.module.css:52:8)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> ([next]/internal/font/google/inter_786c1081.module.css:61:8)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> ([next]/internal/font/google/montserrat_4e203333.module.css:7:8)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> ([next]/internal/font/google/montserrat_4e203333.module.css:16:8)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> ([next]/internal/font/google/montserrat_4e203333.module.css:34:8)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> ([next]/internal/font/google/montserrat_4e203333.module.css:43:8)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)

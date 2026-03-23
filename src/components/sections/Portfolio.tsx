@@ -1,48 +1,68 @@
-import { mockPortfolio } from "@/data/mockData";
+"use client";
+
+const IMAGES = [
+  "https://lh3.googleusercontent.com/aida-public/AB6AXuC9wjQirC0HVYunnZJ8dFg5-N__gCLa79t4nYNKEh3SPzE5TwX1nmfl7KVuKvgAcqmJBVE_2H-npHJTn8ZEQH8oMszFwrtEvBhBafqx_zCRr5e8sJ0FZGJj2MpNDk-UpXyPYBWOlyt4BOD7HlCjjr2hmhPoBZO4kH_z-9_KB4CQvideKfN7mSw4b2VRHK1rHtWIzGs1iuLDSgKs_LA3xL8VNr3b9kMpAjMIm8l5pGDRDUKOraiBks-K6BZzbp2WtPY32z3P3iMJrGk",
+  "https://lh3.googleusercontent.com/aida-public/AB6AXuCz2lpKnrPxnPKjjM0-xIA4UpHlGpJ4Ou_GTEc30PLSHoqKttsta598ZwGBaW9J0yiJq9iCLSj4Hl58LSQGxIDMnFufRdHgbj5y7EYFRnVgx78PFnhQoDxSEMiQMknAxwgs-2qIkvx0RRlO-A5ujnQIWg6TMNuh292DNoiqMCU8r_D9tTAj_5CXdI9LC2r76NGsurv3pAc3jdcjhxPsqa5taQeWLRO6pLheWFSQjupydyOymB0VXcHy2clMOBs6XyA90CWFyG0aMks",
+  "https://lh3.googleusercontent.com/aida-public/AB6AXuAIre8V1S7nyIPXyQaeStDFKF-OatoDcmFOZJsK6u2dnKhpDEmO_SPCzDBMV-6YrS9qf2506d5VgekmJU2ONyIAi-Jbf50HneLghpaydSNeppc1y_Rww1WRm5nkgn3YSKQIA7VCcDVcDiH9XOp-0kV2mDPGGLCEtWgqqSAJEQhtOibhdiRQw5-dmnI0FUvOfAktAHtTGKvvug3cWsDLQCWztBCa6eyQ9YYT-JQfcUo-_DKXDFr9LwVAEFxvcTXsMq6olYMFUdSwo5M",
+  "https://lh3.googleusercontent.com/aida-public/AB6AXuBWaFjsMh4n7oipNfeYFLwGkSEHCHJHBL3ACsPUVICqdQVrbQAwBrkhUdEnO1i0McizB21UkMOwB2559Gw_SbsqFWkdeYBJAJyIad1sGnUABr5Mgu6WQgh_goyfc99Cyo0R1wD8cz2y7gcEI9KhZmcfZgx9AiLlkDnH_0aBst5ZuiwQx_x5i4UgflTeIcEC-zsaV845seaXyl1LFWrGbtCs_9fwj0Z6SQ7jbri8eynUq2RhFMF4R617eL23W2cWGe-ekYnBYDkoD1c",
+  "https://lh3.googleusercontent.com/aida-public/AB6AXuBupPmPlFAx7I7GVKsAtSJOPouvylLSnaHZQ3fJpwNtyz_stc9Qeh764R55k6itJb6IDAiONYiSzah7nFW_XTOHamRQuq0xO-5BQvcgRhezyltpq8r7XJ9tcbexKTQcOEPuqAi1qfQ32CrpFgh83QMQMiuPMrKOx2W7Mjx4sxssPpexUiHtjjwYyBJY0z2YRN7bIho6PibVURtmiLsf-ymZwx81ev-fAB0cyIg_cvPA9aKT0WCEhHOfJGpxTU-02Sc8baKsPzbxQwk",
+  "https://lh3.googleusercontent.com/aida-public/AB6AXuA7jh26aB6nbtyxPhZIqUj_V9AH6_0oVjhPIRvJv5VvHBo9x2Wr0UmsG7tEVdfuq9LtDKwHOZzl0bNxn02KdaNExqVXQ8aOI-w0UfT5Z5BWQCeeKppfAOl37W-e-y022JlQHyQZ22jYmvKOKl6PgoXhoHvnUdnXPx7yYom9J7kJXw-OuIAyODx7pizRl54H4u9TE1z2fIWULRC7kWKPot32B73UPLP08SuxP11Q68GDpiATxTqFFyOwNHQQjS4r6MMDEhgFJt1uQng"
+];
 
 export default function Portfolio() {
   return (
-    <section id="portfolio" className="py-20 bg-muted/20">
-      <div className="container mx-auto px-4 md:px-8">
-        <div className="text-center space-y-4 mb-16">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary">Hasil Produksi Kami</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Bukti nyata komitmen kami terhadap kualitas jahitan, detail sablon, dan kerapian bordir.
-          </p>
+    <section id="portfolio" className="py-24 px-6 bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto">
+        <div className="mb-16 text-center">
+          <h2 className="font-heading font-bold text-4xl text-primary mb-4 tracking-tight">Industrial Impact</h2>
+          <p className="text-on-surface-variant text-base font-medium max-w-2xl mx-auto">Membangun ekosistem produksi yang berkelanjutan untuk mitra bisnis kami di seluruh Indonesia.</p>
         </div>
-
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-6 mb-20">
-          {mockPortfolio.map((item) => (
-            <div key={item.id} className="relative aspect-square overflow-hidden rounded-xl bg-muted group">
-              <img 
-                src={item.image} 
-                alt={item.alt} 
-                className="object-cover w-full h-full transform transition duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">
-                <p className="text-white font-medium text-center">{item.alt}</p>
-              </div>
+        
+        {/* Modern Stats Banner */}
+        <div className="bg-primary rounded-[2rem] p-10 lg:p-16 mb-20 relative overflow-hidden shadow-2xl">
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-secondary/10 rounded-full -mr-64 -mt-64 blur-[120px]"></div>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 relative z-10">
+            <div className="text-center lg:text-left">
+              <div className="text-5xl font-heading font-extrabold text-white mb-2">10K<span className="text-secondary">+</span></div>
+              <div className="text-slate-400 text-[10px] font-bold tracking-[0.2em] uppercase">Units Monthly</div>
             </div>
-          ))}
-        </div>
-
-        {/* Statistics Banner */}
-        <div className="bg-primary text-white rounded-2xl overflow-hidden shadow-xl">
-          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-primary-foreground/20">
-            <div className="p-8 text-center space-y-2">
-              <p className="text-4xl md:text-5xl font-extrabold text-accent">10,000+</p>
-              <p className="font-heading font-medium text-primary-foreground/80">Pcs Diproduksi</p>
+            <div className="text-center lg:text-left">
+              <div className="text-5xl font-heading font-extrabold text-white mb-2">50<span className="text-secondary">+</span></div>
+              <div className="text-slate-400 text-[10px] font-bold tracking-[0.2em] uppercase">Enterprise Clients</div>
             </div>
-            <div className="p-8 text-center space-y-2">
-              <p className="text-4xl md:text-5xl font-extrabold text-accent">50+</p>
-              <p className="font-heading font-medium text-primary-foreground/80">Klien Bisnis</p>
+            <div className="text-center lg:text-left">
+              <div className="text-5xl font-heading font-extrabold text-white mb-2">15<span className="text-secondary">+</span></div>
+              <div className="text-slate-400 text-[10px] font-bold tracking-[0.2em] uppercase">Production Years</div>
             </div>
-            <div className="p-8 text-center space-y-2">
-              <p className="text-4xl md:text-5xl font-extrabold text-accent">100%</p>
-              <p className="font-heading font-medium text-primary-foreground/80">Garansi Retur Cacat</p>
+            <div className="text-center lg:text-left">
+              <div className="text-5xl font-heading font-extrabold text-white mb-2">99<span className="text-secondary">%</span></div>
+              <div className="text-slate-400 text-[10px] font-bold tracking-[0.2em] uppercase">Client Retention</div>
             </div>
           </div>
         </div>
+
+        {/* Masonry Portfolio Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 auto-rows-[240px]">
+          <div className="row-span-2 rounded-[2rem] overflow-hidden group">
+            <img alt="Production" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100" src={IMAGES[0]} />
+          </div>
+          <div className="col-span-2 rounded-[2rem] overflow-hidden group">
+            <img alt="Warehouse" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100" src={IMAGES[1]} />
+          </div>
+          <div className="row-span-1 rounded-[2rem] overflow-hidden group">
+            <img alt="Tailoring" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100" src={IMAGES[2]} />
+          </div>
+          <div className="row-span-2 rounded-[2rem] overflow-hidden group">
+            <img alt="Product" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100" src={IMAGES[3]} />
+          </div>
+          <div className="col-span-1 rounded-[2rem] overflow-hidden group">
+            <img alt="Packaging" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100" src={IMAGES[4]} />
+          </div>
+          <div className="row-span-1 rounded-[2rem] overflow-hidden group">
+            <img alt="Embroidery" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100" src={IMAGES[5]} />
+          </div>
+        </div>
+        
       </div>
     </section>
   );
