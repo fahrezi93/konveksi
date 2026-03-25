@@ -36,11 +36,11 @@ export default function ProductCatalog() {
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-end mb-10 gap-6">
           <div>
-            <div className="text-secondary font-bold text-[10px] uppercase tracking-[0.3em] mb-2">Our Selection</div>
-            <h2 className="font-heading font-bold text-3xl text-primary tracking-tight">Product Catalog</h2>
+            <div className="text-secondary font-bold text-[10px] uppercase tracking-[0.3em] mb-2">Pilihan Kami</div>
+            <h2 className="font-heading font-bold text-3xl text-primary tracking-tight">Katalog Produk</h2>
           </div>
           <Link href="/katalog" className="text-primary font-bold flex items-center gap-2 hover:gap-3 transition-all text-xs group">
-            EXPLORE ALL COLLECTIONS <ArrowRight className="h-4 w-4 text-secondary transition-transform group-hover:translate-x-1" />
+            LIHAT SEMUA KOLEKSI <ArrowRight className="h-4 w-4 text-secondary transition-transform group-hover:translate-x-1" />
           </Link>
         </div>
         
@@ -57,7 +57,7 @@ export default function ProductCatalog() {
                 
                 {item.isBestSeller && (
                   <div className="absolute top-4 right-4">
-                    <span className="glass px-3 py-1.5 rounded-full text-[9px] font-bold tracking-widest uppercase text-primary">BEST SELLER</span>
+                    <span className="glass px-3 py-1.5 rounded-full text-[9px] font-bold tracking-widest uppercase text-primary">TERLARIS</span>
                   </div>
                 )}
               </Link>

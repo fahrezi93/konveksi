@@ -4,12 +4,12 @@ import { useState } from "react";
 import { Search, Check, Factory, PaintBucket, Package, Truck, Info, AlertTriangle } from "lucide-react";
 
 const STEPS = [
-  { id: 1, label: "Pending", icon: Info, status: "Completed" },
-  { id: 2, label: "Cutting", icon: Check, status: "Completed" },
-  { id: 3, label: "Sewing", icon: Factory, status: "In Progress" },
-  { id: 4, label: "Printing", icon: PaintBucket, status: "Waiting" },
-  { id: 5, label: "Quality", icon: Package, status: "Waiting" },
-  { id: 6, label: "Shipment", icon: Truck, status: "Waiting" },
+  { id: 1, label: "Tercatat", icon: Info, status: "Completed" },
+  { id: 2, label: "Potong", icon: Check, status: "Completed" },
+  { id: 3, label: "Jahit", icon: Factory, status: "In Progress" },
+  { id: 4, label: "Sablon/Bordir", icon: PaintBucket, status: "Waiting" },
+  { id: 5, label: "QC", icon: Package, status: "Waiting" },
+  { id: 6, label: "Pengiriman", icon: Truck, status: "Waiting" },
 ];
 
 export default function OrderTracking() {
@@ -33,7 +33,7 @@ export default function OrderTracking() {
     <section id="lacak" className="py-12 lg:py-16 px-4 lg:px-6 bg-white">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-10">
-          <h2 className="font-heading font-bold text-2xl lg:text-3xl text-primary mb-3 tracking-tight">Real-time Production</h2>
+          <h2 className="font-heading font-bold text-2xl lg:text-3xl text-primary mb-3 tracking-tight">Pantau Produksi Langsung</h2>
           <p className="text-on-surface-variant text-sm lg:text-base font-medium">Pantau setiap tahapan dalam proses produksi secara transparan.</p>
         </div>
         

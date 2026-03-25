@@ -14,7 +14,7 @@ export default function Portfolio() {
     <section id="portfolio" className="py-12 lg:py-16 px-4 lg:px-6 bg-white overflow-hidden">
       <div className="max-w-6xl mx-auto">
         <div className="mb-12 text-center">
-          <h2 className="font-heading font-bold text-3xl lg:text-4xl text-primary mb-3 tracking-tight">Industrial Impact</h2>
+          <h2 className="font-heading font-bold text-3xl lg:text-4xl text-primary mb-3 tracking-tight">Dampak Industri</h2>
           <p className="text-on-surface-variant text-sm md:text-base font-medium max-w-xl mx-auto">Membangun ekosistem produksi yang berkelanjutan untuk mitra bisnis kami di seluruh Indonesia.</p>
         </div>
         
@@ -24,19 +24,19 @@ export default function Portfolio() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
             <div className="text-center lg:text-left">
               <div className="text-4xl font-heading font-extrabold text-white mb-1.5">10K<span className="text-secondary">+</span></div>
-              <div className="text-slate-400 text-[9px] font-bold tracking-[0.2em] uppercase">Units Monthly</div>
+              <div className="text-slate-400 text-[9px] font-bold tracking-[0.2em] uppercase">Unit Per Bulan</div>
             </div>
             <div className="text-center lg:text-left">
               <div className="text-4xl font-heading font-extrabold text-white mb-1.5">50<span className="text-secondary">+</span></div>
-              <div className="text-slate-400 text-[9px] font-bold tracking-[0.2em] uppercase">Enterprise Clients</div>
+              <div className="text-slate-400 text-[9px] font-bold tracking-[0.2em] uppercase">Klien Korporasi</div>
             </div>
             <div className="text-center lg:text-left">
               <div className="text-4xl font-heading font-extrabold text-white mb-1.5">15<span className="text-secondary">+</span></div>
-              <div className="text-slate-400 text-[9px] font-bold tracking-[0.2em] uppercase">Production Years</div>
+              <div className="text-slate-400 text-[9px] font-bold tracking-[0.2em] uppercase">Tahun Produksi</div>
             </div>
             <div className="text-center lg:text-left">
               <div className="text-4xl font-heading font-extrabold text-white mb-1.5">99<span className="text-secondary">%</span></div>
-              <div className="text-slate-400 text-[9px] font-bold tracking-[0.2em] uppercase">Client Retention</div>
+              <div className="text-slate-400 text-[9px] font-bold tracking-[0.2em] uppercase">Retensi Klien</div>
             </div>
           </div>
         </div>

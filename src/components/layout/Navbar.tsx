@@ -24,7 +24,7 @@ export default function Navbar() {
             href="/" 
             className={`${pathname === '/' ? 'text-secondary' : 'text-on-surface-variant hover:text-primary'} font-heading font-bold text-[13px] tracking-wide transition-colors`}
           >
-            Home
+            Beranda
           </Link>
           <Link 
             href="/katalog" 

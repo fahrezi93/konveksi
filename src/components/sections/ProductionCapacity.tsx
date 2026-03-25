@@ -1,59 +1,73 @@
 import Link from "next/link";
 import React from "react";
+import { Gauge, ArrowRight } from "lucide-react";
 
 const ProductionCapacity = () => {
   const months = [
-    "Januari",
-    "Februari",
-    "Maret",
-    "April",
-    "Mei",
-    "Juni",
-    "Juli",
-    "Agustus",
-    "September",
-    "Oktober",
-    "November",
-    "Desember",
+    "Januari", "Februari", "Maret", "April", "Mei", "Juni", 
+    "Juli", "Agustus", "September", "Oktober", "November", "Desember"
   ];
   const currentMonth = months[new Date().getMonth()];
+  const occupied = 8500;
+  const total = 10000;
+  const percentage = (occupied / total) * 100;
 
   return (
-    <section className="w-full py-6 md:py-8 bg-white dark:bg-zinc-950 border-b border-gray-100 dark:border-zinc-800">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="relative overflow-hidden rounded-2xl bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 p-6 md:p-8 shadow-sm">
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-            <div className="flex-1 w-full">
-              <h2 className="text-xl md:text-2xl font-bold tracking-tight mb-2 text-zinc-900 dark:text-zinc-50">
-                Status Kuota Produksi: {currentMonth}
-              </h2>
-              
-              {/* Progress Bar Container */}
-              <div className="mt-4 mb-2 relative h-4 w-full overflow-hidden rounded-full bg-zinc-200 dark:bg-zinc-800">
-                <div
-                  className="h-full rounded-full transition-all duration-1000 ease-in-out"
-                  style={{ width: "85%", backgroundColor: "#FF6B35" }}
-                />
+    <section className="w-full py-8 md:py-12 bg-surface relative overflow-hidden">
+      {/* Decorative Grid Background */}
+      <div className="absolute inset-0 bg-grid opacity-50 pointer-events-none"></div>
+
+      <div className="container mx-auto px-4 lg:px-6 relative z-10">
+        <div className="max-w-6xl mx-auto rounded-3xl bg-secondary text-white p-6 md:p-10 shadow-2xl relative overflow-hidden group">
+          
+          {/* Abstract Pattern overlay */}
+          <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -mr-32 -mt-32 pointer-events-none"></div>
+          
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
+            <div className="flex-1 w-full text-center md:text-left">
+              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4">
+                <Gauge className="w-3.5 h-3.5" />
+                Status Kapasitas Langsung
               </div>
               
-              {/* Stats */}
-              <div className="flex items-center justify-between text-sm md:text-base font-medium text-zinc-600 dark:text-zinc-400">
-                <span>Kapasitas Terisi: <span className="text-zinc-900 dark:text-zinc-100 font-bold">8.500 Pcs</span></span>
-                <span>Sisa Slot: <span className="font-bold" style={{ color: "#FF6B35" }}>1.500 Pcs</span></span>
+              <h2 className="text-2xl md:text-3xl font-heading font-black tracking-tight mb-2 text-white">
+                Slot Produksi: <span className="underline decoration-white/30 decoration-2 underline-offset-4">{currentMonth}</span>
+              </h2>
+              <p className="text-white/80 font-medium text-sm md:text-base mb-6 max-w-lg">
+                Slot produksi kami terbatas untuk menjaga kualitas. Amankan antrian Anda sekarang sebelum penuh.
+              </p>
+              
+              <div className="bg-black/20 rounded-2xl p-5 border border-white/10 backdrop-blur-sm">
+                <div className="flex justify-between text-xs font-bold uppercase tracking-wider mb-2 text-white/70">
+                  <span>Terisi</span>
+                  <span>{percentage}%</span>
+                </div>
+                {/* Progress Bar Container */}
+                <div className="relative h-3 w-full overflow-hidden rounded-full bg-black/20">
+                  <div
+                    className="h-full rounded-full transition-all duration-1000 ease-out bg-white shadow-lg shadow-white/50"
+                    style={{ width: `${percentage}%` }}
+                  />
+                </div>
+                
+                {/* Stats */}
+                <div className="flex items-center justify-between text-sm mt-3 pt-3 border-t border-white/10">
+                  <span className="text-white/80 font-medium">Kapasitas: <span className="text-white font-bold">{occupied.toLocaleString()} Pcs</span></span>
+                  <span className="text-white font-bold bg-white/20 px-2 py-0.5 rounded text-xs">Sisa: {(total - occupied).toLocaleString()} Pcs</span>
+                </div>
               </div>
             </div>
 
             {/* CTA Button */}
-            <div className="w-full md:w-auto flex-shrink-0">
+            <div className="w-full md:w-auto flex-shrink-0 flex justify-center">
               <Link
-                href="https://wa.me/message/YOUR_WA_LINK" // Replace with actual WA link
+                href="https://wa.me/6281234567890?text=Halo%20KonveksiPro%2C%20saya%20ingin%20booking%20slot%20produksi%20untuk%20bulan%20ini." 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative inline-flex items-center justify-center w-full md:w-auto px-8 py-4 font-bold text-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
-                style={{ backgroundColor: "#FF6B35" }}
+                className="group relative inline-flex items-center gap-3 justify-center px-8 py-4 bg-white text-secondary rounded-xl font-heading font-bold text-sm shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300"
               >
-                <div className="animate-ping absolute inline-flex h-full w-full rounded-xl bg-[#FF6B35] opacity-40"></div>
-                <span className="relative">Amankan Slot Sekarang</span>
+                <span>Amankan Slot Sekarang</span>
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
           </div>

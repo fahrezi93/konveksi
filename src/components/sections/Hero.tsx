@@ -1,62 +1,105 @@
 "use client";
 
-import { ArrowRight, Search, ShieldCheck } from "lucide-react";
+import { ArrowRight, Search, Zap, CheckCircle2, TrendingUp } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative flex items-center overflow-hidden px-4 lg:px-8 pt-24 pb-12 lg:pt-32 lg:pb-16 bg-surface min-h-[calc(100vh-80px)]">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center w-full">
-        <div className="lg:col-span-7 z-10 text-center lg:text-left mt-4 md:mt-0">
-          
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary/10 text-secondary font-bold text-[9px] uppercase tracking-widest mb-4">
-            <span className="flex h-1.5 w-1.5 rounded-full bg-secondary pulse-soft"></span>
-            High Precision Manufacturing
-          </div>
-          
-          <h1 className="font-heading font-extrabold text-4xl lg:text-[3.5rem] leading-[1.1] tracking-tight mb-4 text-primary">
-            Evolving <br className="hidden lg:block"/><span className="text-secondary">Garment</span> <br className="hidden lg:block"/>Standards.
-          </h1>
-          
-          <p className="text-on-surface-variant text-sm md:text-base max-w-md mb-8 leading-relaxed font-medium mx-auto lg:mx-0">
-            Kualitas premium, tepat waktu, dan transparan. Kami mewujudkan standar manufaktur tinggi untuk kebutuhan brand dan korporasi global.
-          </p>
-          
-          <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
-            <Link href="/katalog" className="bg-primary text-white px-6 py-3 rounded-full font-heading font-bold text-[13px] transition-all flex items-center gap-2 group hover:pr-8 shadow-md shadow-primary/20">
-              Lihat Katalog
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-            <Link href="/#lacak" className="bg-white border border-outline-variant hover:border-primary text-primary px-6 py-3 rounded-full font-heading font-bold text-[13px] transition-all flex items-center gap-2">
-              <Search className="h-4 w-4" />
-              Lacak Pesanan
-            </Link>
-          </div>
+    <section className="relative pt-24 pb-12 lg:pt-32 lg:pb-16 bg-surface overflow-hidden">
+      {/* Background Ambience */}
+      <div className="absolute inset-0 bg-grid opacity-40 pointer-events-none"></div>
+      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-primary/10 to-transparent"></div>
+      
+      <div className="max-w-7xl mx-auto px-4 lg:px-6 relative z-10 flex flex-col items-center text-center">
+        
+        {/* Badge */}
+        <div className="animate-in fade-in zoom-in duration-700 delay-100 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-primary/5 text-primary font-bold text-[10px] uppercase tracking-widest mb-6 shadow-sm hover:border-secondary/20 transition-colors cursor-default">
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
+          </span>
+          Rekayasa Kualitas Garmen v2.0
         </div>
         
-        <div className="lg:col-span-5 relative mt-8 lg:mt-0 max-w-[450px] mx-auto w-full">
-          <div className="absolute -inset-8 bg-gradient-to-tr from-secondary/20 to-transparent rounded-full blur-2xl opacity-30"></div>
-          <div className="relative rounded-2xl overflow-hidden shadow-xl aspect-square xl:aspect-[4/3] max-h-[380px] w-full">
-            <img 
-              alt="Manufacturing floor" 
-              className="w-full h-full object-cover" 
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuC20qxYQHKEzw9ir-rF4GO-0bjp_OuIc-asoUyQRtJd-0pRCOJ9_PQu5-syT2tHgENDNr2UQy68X9ldxWygU4tfiOUm4_9NLSjLqvBIxqdtJapJMWAoW6FO-2-uSA0sEGFppU7hx4-a24jhoK9A91YcaKWLUkhZnFsvyKmRYw6GVmln6LMRmDd2QIqeq9nbDXQOd14lJcq4omBJKjAzLdAzJx1K5uz-BkzvRpNROPrKI9JXwdbmH8u-oerDYMQDSsd7nAQhbul4SHA"
-            />
-          </div>
-          
-          {/* High-End Stats Widget */}
-          <div className="absolute -bottom-4 -left-4 glass p-4 rounded-xl shadow-lg border border-white/50 hidden md:flex items-center gap-3">
-            <div className="bg-secondary text-white p-2.5 rounded-lg shadow-md shadow-secondary/30">
-              <ShieldCheck className="h-5 w-5" />
-            </div>
-            <div>
-              <div className="text-xl font-black font-heading text-primary leading-none mb-0.5">99.8%</div>
-              <div className="text-[8px] text-on-surface-variant uppercase tracking-[0.2em] font-bold">Accuracy rate</div>
-            </div>
-          </div>
-          
+        {/* Main Heading */}
+        <h1 className="animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200 font-heading font-extrabold text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tight text-primary max-w-4xl mx-auto mb-6">
+          Presisi <span className="text-secondary relative inline-block">
+            Keahlian
+            <svg className="absolute w-full h-2 -bottom-1 left-0 text-secondary/20" viewBox="0 0 100 10" preserveAspectRatio="none">
+              <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="4" fill="none" />
+            </svg>
+          </span>, <br className="hidden md:block"/>
+          Skala Industri.
+        </h1>
+        
+        {/* Subheading */}
+        <p className="animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300 text-on-surface-variant text-base md:text-lg max-w-xl mx-auto mb-10 leading-relaxed font-medium">
+          Kami memadukan teknologi manufaktur modern dengan ketelitian artisan untuk menghasilkan standar garmen baru bagi brand visioner.
+        </p>
+        
+        {/* CTA Buttons */}
+        <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 delay-400 flex flex-col sm:flex-row gap-3 w-full justify-center mb-12 lg:mb-16">
+          <Link href="/katalog" className="bg-primary text-white px-6 py-3 rounded-xl font-heading font-bold text-xs md:text-sm transition-all flex items-center justify-center gap-2 hover:scale-105 active:scale-95 shadow-xl shadow-primary/20">
+            Mulai Produksi
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+          <Link href="/#lacak" className="group bg-white border border-outline-variant hover:border-primary/50 text-primary px-6 py-3 rounded-xl font-heading font-bold text-xs md:text-sm transition-all flex items-center justify-center gap-2 hover:bg-surface-variant">
+            <Search className="h-4 w-4 text-on-surface-variant group-hover:text-primary transition-colors" />
+            Lacak Pesanan
+          </Link>
         </div>
+
+        {/* Hero Visual Container - Compact Version */}
+        <div className="animate-in fade-in zoom-in duration-1000 delay-500 w-full max-w-5xl mx-auto relative group perspective-1000">
+          
+          {/* Main Image */}
+          <div className="relative rounded-2xl overflow-hidden shadow-xl border border-white/50 bg-white aspect-[2/1] md:aspect-[2.5/1]">
+             <img 
+              alt="Industrial Precision Factory" 
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[1.5s] ease-out" 
+              src="https://images.unsplash.com/photo-1598532163257-ae3c6b2524b6?q=80&w=2863&auto=format&fit=crop"
+            />
+            {/* Overlay Gradient */}
+            <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-transparent to-transparent opacity-90"></div>
+            
+            {/* Integrated Stats Bar at Bottom - Compact */}
+            <div className="absolute bottom-0 left-0 right-0 p-4 md:p-8 flex flex-col md:flex-row justify-between items-end md:items-center gap-4 border-t border-white/10 bg-white/5 backdrop-blur-md">
+              <div className="text-left">
+                <div className="text-white/60 text-[10px] font-bold uppercase tracking-widest mb-1">Kapasitas Bulanan</div>
+                <div className="text-white text-xl md:text-2xl font-heading font-black">10,000+ <span className="text-secondary text-sm">Pcs</span></div>
+              </div>
+              
+              <div className="hidden md:block h-8 w-px bg-white/10"></div>
+              
+              <div className="text-left">
+                <div className="text-white/60 text-[10px] font-bold uppercase tracking-widest mb-1">Akurasi Jahitan</div>
+                <div className="text-white text-xl md:text-2xl font-heading font-black flex items-center gap-2">
+                  99.8% 
+                  <CheckCircle2 className="text-emerald-400 h-4 w-4" />
+                </div>
+              </div>
+              
+              <div className="hidden md:block h-8 w-px bg-white/10"></div>
+              
+              <div className="text-left w-full md:w-auto">
+                <div className="text-white/60 text-[10px] font-bold uppercase tracking-widest mb-1">Status Produksi</div>
+                <div className="flex items-center gap-2 text-emerald-400 font-bold bg-emerald-400/10 px-3 py-1 rounded-full border border-emerald-400/20 w-fit">
+                  <span className="relative flex h-1.5 w-1.5">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-400"></span>
+                  </span>
+                  <span className="text-[10px]">Berjalan Normal</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Floating Elements for Depth - Reduced */}
+          <div className="absolute -top-8 -right-8 w-48 h-48 bg-secondary/10 rounded-full blur-3xl opacity-30 pointer-events-none animate-pulse"></div>
+          <div className="absolute -bottom-8 -left-8 w-48 h-48 bg-blue-500/10 rounded-full blur-3xl opacity-30 pointer-events-none"></div>
+
+        </div>
+
       </div>
     </section>
   );

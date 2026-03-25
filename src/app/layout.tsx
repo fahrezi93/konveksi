@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Inter, Montserrat } from "next/font/google";
+import { Manrope, Montserrat } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
+const manrope = Manrope({
   variable: "--font-sans",
   subsets: ["latin"],
 });
@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html
       lang="id"
-      className={`${inter.variable} ${montserrat.variable} h-full antialiased`}
+      className={`${manrope.variable} ${montserrat.variable} h-full antialiased`}
     >
       <body className="font-sans min-h-full flex flex-col">
         <Navbar />

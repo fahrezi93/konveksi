@@ -29,24 +29,24 @@ export default function Footer() {
           </div>
           <div className="lg:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-8">
             <div className="space-y-8">
-              <h5 className="font-heading font-bold text-xs tracking-[0.2em] uppercase text-secondary">Company</h5>
+              <h5 className="font-heading font-bold text-xs tracking-[0.2em] uppercase text-secondary">Perusahaan</h5>
               <ul className="space-y-4">
-                <li><a className="text-slate-400 hover:text-white transition-all text-sm font-medium" href="#">About Us</a></li>
-                <li><a className="text-slate-400 hover:text-white transition-all text-sm font-medium" href="#">Careers</a></li>
-                <li><a className="text-slate-400 hover:text-white transition-all text-sm font-medium" href="#">Our Factory</a></li>
+                <li><a className="text-slate-400 hover:text-white transition-all text-sm font-medium" href="#">Tentang Kami</a></li>
+                <li><a className="text-slate-400 hover:text-white transition-all text-sm font-medium" href="#">Karir</a></li>
+                <li><a className="text-slate-400 hover:text-white transition-all text-sm font-medium" href="#">Pabrik Kami</a></li>
               </ul>
             </div>
             <div className="space-y-8">
               <h5 className="font-heading font-bold text-xs tracking-[0.2em] uppercase text-secondary">Legal</h5>
               <ul className="space-y-4">
-                <li><a className="text-slate-400 hover:text-white transition-all text-sm font-medium" href="#">Terms of Service</a></li>
-                <li><a className="text-slate-400 hover:text-white transition-all text-sm font-medium" href="#">Privacy Policy</a></li>
-                <li><a className="text-slate-400 hover:text-white transition-all text-sm font-medium" href="#">Sustainability</a></li>
+                <li><a className="text-slate-400 hover:text-white transition-all text-sm font-medium" href="#">Syarat & Ketentuan</a></li>
+                <li><a className="text-slate-400 hover:text-white transition-all text-sm font-medium" href="#">Kebijakan Privasi</a></li>
+                <li><a className="text-slate-400 hover:text-white transition-all text-sm font-medium" href="#">Keberlanjutan</a></li>
               </ul>
             </div>
             <div className="space-y-8 col-span-2 md:col-span-1">
-              <h5 className="font-heading font-bold text-xs tracking-[0.2em] uppercase text-secondary">Newsletter</h5>
-              <p className="text-xs text-slate-500 font-medium">Get production updates and material insights.</p>
+              <h5 className="font-heading font-bold text-xs tracking-[0.2em] uppercase text-secondary">Buletin</h5>
+              <p className="text-xs text-slate-500 font-medium">Dapatkan update produksi dan wawasan material.</p>
               <div className="relative">
                 <input className="w-full bg-white/5 border-transparent rounded-xl py-3 px-4 text-sm focus:bg-white/10 focus:border-secondary focus:ring-0 outline-none transition-all" placeholder="Email" type="text" />
               </div>
@@ -54,7 +54,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="pt-12 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-slate-500 text-[10px] font-bold tracking-[0.2em] uppercase">© 2026 KonveksiPro. Engineered for quality.</p>
+          <p className="text-slate-500 text-[10px] font-bold tracking-[0.2em] uppercase">© 2026 KonveksiPro. Direkayasa untuk kualitas.</p>
           <div className="flex gap-8">
             <span className="text-slate-600 text-[10px] font-bold tracking-widest cursor-pointer hover:text-slate-400">INSTAGRAM</span>
             <span className="text-slate-600 text-[10px] font-bold tracking-widest cursor-pointer hover:text-slate-400">LINKEDIN</span>
