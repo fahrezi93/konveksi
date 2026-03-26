@@ -39,7 +39,7 @@ export default function Hero() {
         
         {/* CTA Buttons */}
         <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 delay-400 flex flex-col sm:flex-row gap-3 w-full justify-center mb-12 lg:mb-16">
-          <Link href="/katalog" className="bg-primary text-white px-6 py-3 rounded-xl font-heading font-bold text-xs md:text-sm transition-all flex items-center justify-center gap-2 hover:scale-105 active:scale-95 shadow-xl shadow-primary/20">
+          <Link href="/booking" className="bg-primary text-white px-6 py-3 rounded-xl font-heading font-bold text-xs md:text-sm transition-all flex items-center justify-center gap-2 hover:scale-105 active:scale-95 shadow-xl shadow-primary/20">
             Mulai Produksi
             <ArrowRight className="h-4 w-4" />
           </Link>
