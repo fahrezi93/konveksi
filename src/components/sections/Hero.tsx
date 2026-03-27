@@ -53,7 +53,7 @@ export default function Hero() {
         <div className="animate-in fade-in zoom-in duration-1000 delay-500 w-full max-w-5xl mx-auto relative group perspective-1000">
           
           {/* Main Image */}
-          <div className="relative rounded-2xl overflow-hidden shadow-xl border border-white/50 bg-white aspect-[2/1] md:aspect-[2.5/1]">
+          <div className="relative rounded-2xl overflow-hidden shadow-xl border border-white/50 bg-white min-h-[350px] aspect-auto sm:aspect-[2/1] md:aspect-[2.5/1]">
              <img 
               alt="Industrial Precision Factory" 
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[1.5s] ease-out" 
@@ -63,32 +63,32 @@ export default function Hero() {
             <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-transparent to-transparent opacity-90"></div>
             
             {/* Integrated Stats Bar at Bottom - Compact */}
-            <div className="absolute bottom-0 left-0 right-0 p-4 md:p-8 flex flex-col md:flex-row justify-between items-end md:items-center gap-4 border-t border-white/10 bg-white/5 backdrop-blur-md">
+            <div className="absolute bottom-0 left-0 right-0 p-4 md:p-8 grid grid-cols-2 md:flex md:flex-row justify-between items-start md:items-center gap-4 md:gap-6 border-t border-white/10 bg-white/5 backdrop-blur-md">
               <div className="text-left">
-                <div className="text-white/60 text-[10px] font-bold uppercase tracking-widest mb-1">Kapasitas Bulanan</div>
-                <div className="text-white text-xl md:text-2xl font-heading font-black">10,000+ <span className="text-secondary text-sm">Pcs</span></div>
+                <div className="text-white/60 text-[10px] lg:text-xs font-bold uppercase tracking-widest mb-1">Kapasitas Bulanan</div>
+                <div className="text-white text-lg sm:text-xl md:text-2xl font-heading font-black">10,000+ <span className="text-secondary text-xs sm:text-sm">Pcs</span></div>
               </div>
               
               <div className="hidden md:block h-8 w-px bg-white/10"></div>
               
               <div className="text-left">
-                <div className="text-white/60 text-[10px] font-bold uppercase tracking-widest mb-1">Akurasi Jahitan</div>
-                <div className="text-white text-xl md:text-2xl font-heading font-black flex items-center gap-2">
+                <div className="text-white/60 text-[10px] lg:text-xs font-bold uppercase tracking-widest mb-1">Akurasi Jahitan</div>
+                <div className="text-white text-lg sm:text-xl md:text-2xl font-heading font-black flex items-center gap-2">
                   99.8% 
-                  <CheckCircle2 className="text-emerald-400 h-4 w-4" />
+                  <CheckCircle2 className="text-emerald-400 h-3 w-3 sm:h-4 sm:w-4" />
                 </div>
               </div>
               
               <div className="hidden md:block h-8 w-px bg-white/10"></div>
               
-              <div className="text-left w-full md:w-auto">
-                <div className="text-white/60 text-[10px] font-bold uppercase tracking-widest mb-1">Status Produksi</div>
-                <div className="flex items-center gap-2 text-emerald-400 font-bold bg-emerald-400/10 px-3 py-1 rounded-full border border-emerald-400/20 w-fit">
-                  <span className="relative flex h-1.5 w-1.5">
+              <div className="text-left col-span-2 md:col-span-1 mt-1 md:mt-0">
+                <div className="text-white/60 text-[10px] lg:text-xs font-bold uppercase tracking-widest mb-1">Status Produksi</div>
+                <div className="flex items-center gap-2 text-emerald-400 font-bold bg-emerald-400/10 px-3 py-1.5 rounded-full border border-emerald-400/20 w-fit">
+                  <span className="relative flex h-1.5 w-1.5 sm:h-2 sm:w-2">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-400"></span>
+                    <span className="relative inline-flex rounded-full h-1.5 w-1.5 sm:h-2 sm:w-2 bg-emerald-400"></span>
                   </span>
-                  <span className="text-[10px]">Berjalan Normal</span>
+                  <span className="text-[10px] sm:text-xs">Berjalan Normal</span>
                 </div>
               </div>
             </div>

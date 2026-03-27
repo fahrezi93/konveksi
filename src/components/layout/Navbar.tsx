@@ -10,7 +10,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 w-full z-50 glass border-b border-white/20">
+    <nav className="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-outline-variant/50 shadow-sm transition-all">
       <div className="flex justify-between items-center px-4 lg:px-8 py-3 max-w-6xl mx-auto">
         <div className="flex items-center gap-2">
           <div className="w-6 h-6 bg-primary rounded-lg flex items-center justify-center">
@@ -59,7 +59,7 @@ export default function Navbar() {
             href="https://wa.me/6281234567890" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="bg-secondary text-white px-4 py-2 rounded-full font-heading font-bold text-[10px] uppercase tracking-widest hover:brightness-110 active:scale-95 duration-200 transition-all shadow-md shadow-secondary/20"
+            className="hidden md:flex bg-secondary text-white px-4 py-2 rounded-full font-heading font-bold text-[10px] uppercase tracking-widest hover:brightness-110 active:scale-95 duration-200 transition-all shadow-md shadow-secondary/20"
           >
             Konsultasi WA
           </Link>
@@ -114,6 +114,15 @@ export default function Navbar() {
               className="bg-primary text-white text-center px-4 py-3 rounded-xl font-heading font-bold text-sm tracking-wide shadow-md shadow-primary/20"
             >
               Buat Pesanan
+            </Link>
+            <Link 
+              href="https://wa.me/6281234567890" 
+              onClick={() => setIsOpen(false)}
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="bg-secondary text-white text-center px-4 py-3 rounded-xl font-heading font-bold text-sm tracking-wide shadow-md shadow-secondary/20"
+            >
+              Konsultasi WA
             </Link>
           </div>
         </div>

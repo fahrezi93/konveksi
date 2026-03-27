@@ -23,8 +23,9 @@ const ProductionCapacity = () => {
           {/* Abstract Pattern overlay */}
           <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -mr-32 -mt-32 pointer-events-none"></div>
           
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
-            <div className="flex-1 w-full text-center md:text-left">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 relative z-10">
+            {/* Left Column: Text & Context */}
+            <div className="flex-1 w-full text-center lg:text-left">
               <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4">
                 <Gauge className="w-3.5 h-3.5" />
                 Status Kapasitas Langsung
@@ -33,17 +34,33 @@ const ProductionCapacity = () => {
               <h2 className="text-2xl md:text-3xl font-heading font-black tracking-tight mb-2 text-white">
                 Slot Produksi: <span className="underline decoration-white/30 decoration-2 underline-offset-4">{currentMonth}</span>
               </h2>
-              <p className="text-white/80 font-medium text-sm md:text-base mb-6 max-w-lg">
+              <p className="text-white/80 font-medium text-sm md:text-base mb-6 lg:mb-8 max-w-lg mx-auto lg:mx-0">
                 Slot produksi kami terbatas untuk menjaga kualitas. Amankan antrian Anda sekarang sebelum penuh.
               </p>
               
-              <div className="bg-black/20 rounded-2xl p-5 border border-white/10 backdrop-blur-sm">
+              {/* Desktop CTA */}
+              <div className="hidden lg:block w-fit">
+                <Link
+                  href="https://wa.me/6281234567890?text=Halo%20KonveksiPro%2C%20saya%20ingin%20booking%20slot%20produksi%20untuk%20bulan%20ini." 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative inline-flex items-center gap-3 justify-center px-8 py-4 bg-white text-secondary rounded-xl font-heading font-bold text-sm shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300"
+                >
+                  <span>Amankan Slot Sekarang</span>
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Right Column: Stat Card */}
+            <div className="w-full lg:w-[450px] flex-shrink-0">
+              <div className="bg-black/20 rounded-2xl p-6 border border-white/10 backdrop-blur-sm shadow-inner">
                 <div className="flex justify-between text-xs font-bold uppercase tracking-wider mb-2 text-white/70">
                   <span>Terisi</span>
                   <span>{percentage}%</span>
                 </div>
                 {/* Progress Bar Container */}
-                <div className="relative h-3 w-full overflow-hidden rounded-full bg-black/20">
+                <div className="relative h-3.5 w-full overflow-hidden rounded-full bg-black/30">
                   <div
                     className="h-full rounded-full transition-all duration-1000 ease-out bg-white shadow-lg shadow-white/50"
                     style={{ width: `${percentage}%` }}
@@ -51,20 +68,24 @@ const ProductionCapacity = () => {
                 </div>
                 
                 {/* Stats */}
-                <div className="flex items-center justify-between text-sm mt-3 pt-3 border-t border-white/10">
-                  <span className="text-white/80 font-medium">Kapasitas: <span className="text-white font-bold">{occupied.toLocaleString()} Pcs</span></span>
-                  <span className="text-white font-bold bg-white/20 px-2 py-0.5 rounded text-xs">Sisa: {(total - occupied).toLocaleString()} Pcs</span>
+                <div className="flex items-center justify-between text-xs sm:text-sm mt-4 pt-4 border-t border-white/10 gap-2">
+                  <span className="text-white/80 font-medium whitespace-nowrap">
+                    Kapasitas: <span className="text-white font-bold pb-0.5">{occupied.toLocaleString()} Pcs</span>
+                  </span>
+                  <span className="text-white font-bold bg-white/20 px-2 py-1 rounded text-[10px] sm:text-xs whitespace-nowrap">
+                    Sisa: {(total - occupied).toLocaleString()} Pcs
+                  </span>
                 </div>
               </div>
             </div>
 
-            {/* CTA Button */}
-            <div className="w-full md:w-auto flex-shrink-0 flex justify-center">
+            {/* Mobile CTA Button */}
+            <div className="w-full lg:hidden flex justify-center mt-2">
               <Link
                 href="https://wa.me/6281234567890?text=Halo%20KonveksiPro%2C%20saya%20ingin%20booking%20slot%20produksi%20untuk%20bulan%20ini." 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative inline-flex items-center gap-3 justify-center px-8 py-4 bg-white text-secondary rounded-xl font-heading font-bold text-sm shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300"
+                className="group relative inline-flex items-center gap-3 justify-center w-full sm:w-auto px-8 py-4 bg-white text-secondary rounded-xl font-heading font-bold text-sm shadow-xl hover:shadow-2xl active:scale-95 transition-all duration-300"
               >
                 <span>Amankan Slot Sekarang</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
