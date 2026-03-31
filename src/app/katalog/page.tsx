@@ -1,8 +1,26 @@
+"use client";
+
 import { FULL_CATALOG } from "@/data/mockData";
 import { MessageCircle } from "lucide-react";
 import Link from "next/link";
+import { useState } from "react";
+
+const CATEGORIES = [
+  "Semua",
+  "Kemeja Seragam",
+  "Jacket Dan Rompi",
+  "Training Olahraga",
+  "Kaos / Tshirt",
+  "Kaos Polo/ kerah"
+];
 
 export default function CatalogPage() {
+  const [activeCategory, setActiveCategory] = useState("Semua");
+
+  const filteredCatalog = activeCategory === "Semua" 
+    ? FULL_CATALOG 
+    : FULL_CATALOG.filter(item => item.category === activeCategory);
+
   return (
     <main className="min-h-screen bg-surface pt-24 pb-16">
       <div className="max-w-6xl mx-auto px-4 lg:px-8">
@@ -18,8 +36,25 @@ export default function CatalogPage() {
           </p>
         </div>
 
+        {/* Category Tabs */}
+        <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3 mb-12">
+          {CATEGORIES.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              className={`px-4 md:px-6 py-2 md:py-2.5 rounded-full text-xs md:text-sm font-bold transition-all duration-300 border ${
+                activeCategory === cat 
+                  ? "bg-secondary text-white border-secondary shadow-lg shadow-secondary/20 scale-105" 
+                  : "bg-white text-on-surface-variant border-outline-variant hover:border-secondary hover:text-secondary"
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {FULL_CATALOG.map((item) => (
+          {filteredCatalog.map((item) => (
             <div key={item.id} className="bg-white rounded-2xl overflow-hidden card-shadow hover-lift group">
               <Link href={`/katalog/${item.id}`} className="block aspect-[4/5] overflow-hidden relative">
                 <img 

@@ -23,6 +23,7 @@ export const FULL_CATALOG = [
   {
     id: 1,
     title: "Premium Essential Tee",
+    category: "Kaos / Tshirt",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDrFVrPjz0783cbfXnTn1Jxmsud-ENuHcOHFK3mmmvDPknn6NiIqOWaYAurGV0TalmSiV6T3S-NaYoPcxoVHkV6bF6ivkA7oOZ9vaTAdIeo_yrj8Qi8IqYR0-7M8w6ALl31jgxHpolS_0rLohdMHrFLeW4g8dMDVpFrI36Am62ozAahm-PQDQ716Ut6q2s9MiXPsv37V7L7DsGP0hfoZmDrXuWjSgoUNzdynxLwM2-hatg07Ql5X4NAifuHn0lDwUkyyNGw6Oe_SYY",
     tags: ["Cotton 30s", "Min. 24 Pcs"],
     desc: "Material sejuk dengan daya serap tinggi. Sempurna untuk merch brand modern.",
@@ -41,6 +42,7 @@ export const FULL_CATALOG = [
   {
     id: 2,
     title: "Heavyweight Hoodie",
+    category: "Jacket Dan Rompi",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDtHDiYGpMXwxOdf53_lwWhSrPJN8-snnNySro8fdo_VzMfxrz-OC6xDztCUzQU3HxKZCyAJ1RIPl7tzdxfPMivCXF-wjsyByOtFS80Fn6wK9Swh_N_ypXEnlehXDzWf4BtQRkuaHOSJyPV6b6GlWFwdJeKhtwR5r_d6fCCLo55o51qiJTZbFJ_FnCH3U3ihi8l1RVY57AQ9kg0cBVX7VB1X8zoVARidYQ1edQeGwZF000yw75UvprYXQGhSSbsh8msmBBsq66xRDY",
     tags: ["Heavy Fleece", "Min. 12 Pcs"],
     desc: "Potongan oversized modern dengan bahan fleece tebal yang sangat lembut.",
@@ -59,6 +61,7 @@ export const FULL_CATALOG = [
   {
     id: 3,
     title: "Tactical Work Shirt",
+    category: "Kemeja Seragam",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCDPbRBHRhM8BDZ0lKqMvNCbS9fRWotBijaPBcYr25opxo_yKAmWcXpIWWc92-DG4xE4T7LkAPeYNiL8WYNiaHdX0UpXiy26czzUOyam9CINKzH0YTuI6dVaASEh3P72W0cwPa9U0BlPTmvjlReLTFvSRDCnp8nCTxdGmpuS5J02MEKcKsLJc5miN6PRnOAEPRX0EI3FZ2AHwrNrRcOvR4avheE8ysVAe14NMPKxlYVNw-vVJT3U64gyotYywG8Jatj-OHotRHMhVU",
     tags: ["American Drill", "Min. 24 Pcs"],
     desc: "Kekuatan jahitan ganda dengan material tahan gesek untuk medan berat.",
@@ -77,6 +80,7 @@ export const FULL_CATALOG = [
   {
     id: 4,
     title: "Corporate Polo Shirt",
+    category: "Kaos Polo/ kerah",
     image: "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=600&q=80",
     tags: ["Lacoste CVC", "Min. 24 Pcs"],
     desc: "Kaos kerah profesional dengan tekstur berpori, adem, dan menyerap keringat.",
@@ -95,6 +99,7 @@ export const FULL_CATALOG = [
   {
     id: 5,
     title: "Varsity Jacket",
+    category: "Jacket Dan Rompi",
     image: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=600&q=80",
     tags: ["Fleece Cotton", "Min. 12 Pcs"],
     desc: "Jaket gaya kampus klasik dengan kombinasi warna custom dan bordir premium.",
@@ -113,6 +118,7 @@ export const FULL_CATALOG = [
   {
     id: 6,
     title: "Windbreaker Vest",
+    category: "Jacket Dan Rompi",
     image: "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600&q=80",
     tags: ["Taslan Waterproof", "Min. 24 Pcs"],
     desc: "Rompi fungsional anti air untuk kegiatan outdoor atau seragam operasional.",
@@ -127,6 +133,25 @@ export const FULL_CATALOG = [
     minOrder: "24 Pcs",
     estimatedTime: "14-21 Hari Kerja",
     isBestSeller: false
+  },
+  {
+    id: 7,
+    title: "Setelan Training Olahraga",
+    category: "Training Olahraga",
+    image: "https://images.unsplash.com/photo-1518310383802-640c2de311b2?w=600&q=80",
+    tags: ["Diadora / Lotto", "Min. 24 Set"],
+    desc: "Setelan jaket dan celana training nyaman pantul untuk aktivitas intens.",
+    longDesc: "Dirancang secara khusus untuk atlet dan tim olahraga. Menggunakan kombinasi material Diadora atau Lotto yang elastis, menyerap keringat dengan baik, dan tahan terhadap gesekan tinggi. Satu setel sudah mencakup jaket dengan resleting penuh dan celana dengan karet pinggang fleksibel. Cocok untuk seragam tim PORDA, PON, atau instansi olahraga.",
+    features: [
+      "Material Diadora / Lotto / Parasut High Grade",
+      "Termasuk Atasan (Jaket) dan Bawahan (Celana)",
+      "Resleting YKK berkualitas tinggi",
+      "Desain pola ergonomis untuk keleluasaan bergerak",
+      "Cocok ditambahkan bordir logo tim"
+    ],
+    minOrder: "24 Set",
+    estimatedTime: "14-21 Hari Kerja",
+    isBestSeller: true
   }
 ];
 
