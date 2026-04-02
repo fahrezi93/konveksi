@@ -23,6 +23,7 @@ import {
   Send,
 } from "lucide-react";
 import type { BookingFormData } from "../types";
+import MouDownloadButton from "./MouDownloadButton";
 
 interface Props {
   formData: BookingFormData;
@@ -120,10 +121,10 @@ export default function FormSummary({ formData, goToStep, isSubmitted }: Props) 
           <strong className="text-secondary">{formData.email}</strong> dalam
           1×24 jam.
         </p>
-        <div className="mt-6 flex gap-3">
+        <div className="mt-6 flex flex-wrap justify-center gap-3">
           <a
             href="/"
-            className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors"
+            className="inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-xl bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors w-full sm:w-auto"
           >
             Kembali ke Beranda
           </a>
@@ -131,11 +132,12 @@ export default function FormSummary({ formData, goToStep, isSubmitted }: Props) 
             href="https://wa.me/6281234567890"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl bg-green-500 text-white text-sm font-medium hover:bg-green-600 transition-colors"
+            className="inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-xl bg-green-500 text-white text-sm font-medium hover:bg-green-600 transition-colors w-full sm:w-auto"
           >
             <Send className="size-3.5" />
             Chat WhatsApp
           </a>
+          <MouDownloadButton formData={formData} />
         </div>
       </div>
     );
