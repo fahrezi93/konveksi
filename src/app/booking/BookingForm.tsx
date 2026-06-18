@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   User,
   Package,
@@ -12,6 +12,8 @@ import {
   ChevronLeft,
   Check,
   AlertCircle,
+  Loader2,
+  RotateCcw,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BookingFormData, initialFormData, STEPS } from "./types";
@@ -77,12 +79,80 @@ function validateStep(step: number, formData: BookingFormData): ValidationErrors
   return errors;
 }
 
+function formatWhatsAppMessage(data: BookingFormData): string {
+  const sizePria = Object.entries(data.sizeBreakdown.pria)
+    .filter(([_, qty]) => qty > 0)
+    .map(([size, qty]) => `${size}(${qty})`)
+    .join(", ") || "-";
+
+  const sizeWanita = Object.entries(data.sizeBreakdown.wanita)
+    .filter(([_, qty]) => qty > 0)
+    .map(([size, qty]) => `${size}(${qty})`)
+    .join(", ") || "-";
+
+  return `Halo Admin, saya ingin memesan konveksi dengan detail berikut:
+
+\u{1F464} *INFORMASI KLIEN*
+Nama: ${data.fullName}
+Brand: ${data.brandName}
+Email: ${data.email}
+WA: ${data.whatsapp}
+Alamat: ${data.shippingAddress}
+
+\u{1F455} *DETAIL PRODUK*
+Jenis: ${data.garmentType}
+Bahan: ${data.fabricPreference}
+Warna Utama: ${data.primaryColor}
+
+\u{1F3A8} *DESAIN*
+Dekorasi: ${data.decorationTypes.join(", ")}
+Titik Dekorasi: ${data.decorationPoints}
+Link Referensi: ${data.referenceLink || "-"}
+
+\u{1F4CF} *KUANTITAS & UKURAN*
+Estimasi: ${data.moqRange}
+Size Pria: ${sizePria}
+Size Wanita: ${sizeWanita}
+
+\u{1F4B0} *TIMELINE & BUDGET*
+Budget/pcs: Rp ${data.budgetPerPcs}
+Deadline: ${data.deadline}
+Catatan: ${data.additionalNotes || "-"}
+
+Terima kasih.`;
+}
+
 export default function BookingForm() {
+  const [isMounted, setIsMounted] = useState(false);
+  const formTopRef = useRef<HTMLDivElement>(null);
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState<BookingFormData>(initialFormData);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState<ValidationErrors>({});
   const [showErrors, setShowErrors] = useState(false);
+
+  // Load from localStorage on initial mount
+  useEffect(() => {
+    setIsMounted(true);
+    const savedDraft = localStorage.getItem("konveksiBookingDraft");
+    if (savedDraft) {
+      try {
+        const parsed = JSON.parse(savedDraft);
+        if (parsed.currentStep) setCurrentStep(parsed.currentStep);
+        if (parsed.formData) setFormData(parsed.formData);
+      } catch (e) {
+        console.error("Failed to load draft", e);
+      }
+    }
+  }, []);
+
+  // Save to localStorage whenever formData or currentStep changes
+  useEffect(() => {
+    if (isMounted && !isSubmitted) {
+      localStorage.setItem("konveksiBookingDraft", JSON.stringify({ currentStep, formData }));
+    }
+  }, [currentStep, formData, isMounted, isSubmitted]);
 
   const updateFormData = (updates: Partial<BookingFormData>) => {
     setFormData((prev) => ({ ...prev, ...updates }));
@@ -99,30 +169,92 @@ export default function BookingForm() {
 
   const goNext = () => {
     const validationErrors = validateStep(currentStep, formData);
-    if (Object.keys(validationErrors).length > 0) {
+    const errorKeys = Object.keys(validationErrors);
+    
+    if (errorKeys.length > 0) {
       setErrors(validationErrors);
       setShowErrors(true);
+      
+      // Scroll to the exact missing field
+      setTimeout(() => {
+        const firstErrorElement = document.getElementById(errorKeys[0]);
+        if (firstErrorElement) {
+          firstErrorElement.scrollIntoView({ behavior: "smooth", block: "center" });
+          firstErrorElement.focus();
+        } else {
+          formTopRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 50);
       return;
     }
     setErrors({});
     setShowErrors(false);
     if (currentStep < 6) setCurrentStep((s) => s + 1);
+    
+    // Scroll to top of form for the next step
+    setTimeout(() => {
+      formTopRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 50);
   };
 
   const goBack = () => {
     setErrors({});
     setShowErrors(false);
     if (currentStep > 1) setCurrentStep((s) => s - 1);
+    
+    setTimeout(() => {
+      formTopRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 50);
   };
 
   const goToStep = (step: number) => {
     setErrors({});
     setShowErrors(false);
     setCurrentStep(step);
+    
+    setTimeout(() => {
+      formTopRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 50);
   };
 
   const handleSubmit = () => {
-    setIsSubmitted(true);
+    setIsSubmitting(true);
+    
+    setTimeout(() => {
+      const text = formatWhatsAppMessage(formData);
+      const encodedText = encodeURIComponent(text);
+      const waNumber = "6288293275869";
+      window.open(`https://wa.me/${waNumber}?text=${encodedText}`, "_blank");
+      
+      localStorage.removeItem("konveksiBookingDraft");
+      setIsSubmitted(true);
+      setIsSubmitting(false);
+    }, 1200);
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter') {
+      if (e.target instanceof HTMLTextAreaElement) {
+        return;
+      }
+      e.preventDefault();
+      if (currentStep === 6) {
+        handleSubmit();
+      } else {
+        goNext();
+      }
+    }
+  };
+
+  const handleReset = () => {
+    if (window.confirm("Apakah Anda yakin ingin menghapus semua data dan mulai dari awal?")) {
+      setFormData(initialFormData);
+      setCurrentStep(1);
+      setErrors({});
+      setShowErrors(false);
+      localStorage.removeItem("konveksiBookingDraft");
+      formTopRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   };
 
   const renderStep = () => {
@@ -144,17 +276,36 @@ export default function BookingForm() {
     }
   };
 
+
+
   return (
-    <div className="bg-white rounded-3xl shadow-xl shadow-primary/5 border border-outline-variant/50 overflow-hidden flex flex-col relative w-full mb-20 animate-in fade-in slide-in-from-bottom-4 duration-500">
+    <div 
+      ref={formTopRef} 
+      onKeyDown={handleKeyDown}
+      className="bg-white rounded-3xl shadow-xl shadow-primary/5 border border-outline-variant/50 overflow-hidden flex flex-col relative w-full mb-20 animate-in fade-in slide-in-from-bottom-4 duration-500"
+    >
       {/* Progress Header Area */}
       <div className="bg-surface/50 px-5 pt-6 pb-4 sm:px-8 sm:pt-8 sm:pb-5 border-b border-outline-variant/40">
         <div className="flex items-center justify-between mb-4">
-          <span className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-on-surface-variant flex items-center gap-2">
-            Langkah {currentStep} <span className="opacity-40">/</span> {STEPS.length}
-          </span>
-          <span className="text-xs font-bold text-secondary bg-secondary/10 px-2.5 py-1 rounded-full">
-            {Math.round((currentStep / STEPS.length) * 100)}%
-          </span>
+          <div className="flex items-center gap-3">
+            <span className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-on-surface-variant flex items-center gap-2">
+              Langkah {currentStep} <span className="opacity-40">/</span> {STEPS.length}
+            </span>
+            <span className="text-xs font-bold text-secondary bg-secondary/10 px-2.5 py-1 rounded-full">
+              {Math.round((currentStep / STEPS.length) * 100)}%
+            </span>
+          </div>
+          
+          {/* Reset Button */}
+          {!isSubmitted && (
+            <button
+              onClick={handleReset}
+              className="flex items-center gap-1.5 text-[10px] sm:text-xs font-semibold text-red-500/80 hover:text-red-600 transition-colors"
+            >
+              <RotateCcw className="w-3.5 h-3.5" />
+              <span className="hidden sm:inline">Mulai dari Awal</span>
+            </button>
+          )}
         </div>
 
         {/* Progress track */}
@@ -278,10 +429,20 @@ export default function BookingForm() {
               variant="secondary"
               size="lg"
               onClick={handleSubmit}
-              className="gap-2 px-6 sm:px-8 h-11 sm:h-12 rounded-xl text-white font-bold tracking-wide shadow-lg shadow-secondary/25 hover:shadow-secondary/40 hover:scale-[1.02] hover:-translate-y-0.5 transition-all duration-300"
+              disabled={isSubmitting}
+              className="gap-2 px-6 sm:px-8 h-11 sm:h-12 rounded-xl text-white font-bold tracking-wide shadow-lg shadow-secondary/25 hover:shadow-secondary/40 hover:scale-[1.02] hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-70 disabled:hover:scale-100 disabled:cursor-not-allowed"
             >
-              <Check className="w-4 h-4" />
-              Kirim Pesanan
+              {isSubmitting ? (
+                <>
+                  <Loader2 className="w-4 h-4 animate-spin" />
+                  Memproses...
+                </>
+              ) : (
+                <>
+                  <Check className="w-4 h-4" />
+                  Kirim Pesanan
+                </>
+              )}
             </Button>
           )}
         </div>

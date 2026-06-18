@@ -43,7 +43,13 @@ export default function StepTimelineBudget({
             inputMode="numeric"
             placeholder="cth: 85.000"
             value={formData.budgetPerPcs}
-            onChange={(e) => updateFormData({ budgetPerPcs: e.target.value })}
+            onChange={(e) => {
+              let val = e.target.value.replace(/\D/g, "");
+              if (val) {
+                val = parseInt(val, 10).toLocaleString("id-ID");
+              }
+              updateFormData({ budgetPerPcs: val });
+            }}
             aria-invalid={!!errors.budgetPerPcs}
             className="h-11 rounded-xl bg-white/50 focus:bg-white transition-colors pl-10"
           />

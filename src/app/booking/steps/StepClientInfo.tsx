@@ -95,7 +95,15 @@ export default function StepClientInfo({ formData, updateFormData, errors }: Pro
           type="tel"
           placeholder="cth: 0812-3456-7890"
           value={formData.whatsapp}
-          onChange={(e) => updateFormData({ whatsapp: e.target.value })}
+          onChange={(e) => {
+            let val = e.target.value.replace(/\D/g, "");
+            if (val.length > 4 && val.length <= 8) {
+              val = val.slice(0, 4) + "-" + val.slice(4);
+            } else if (val.length > 8) {
+              val = val.slice(0, 4) + "-" + val.slice(4, 8) + "-" + val.slice(8, 14);
+            }
+            updateFormData({ whatsapp: val });
+          }}
           aria-invalid={!!errors.whatsapp}
           className="h-11 rounded-xl bg-white/50 focus:bg-white transition-colors"
         />
